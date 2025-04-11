@@ -25,7 +25,7 @@
             <tr>
                 <td>{{ $operation->annee_prog }}</td>
                 <td>{{ $operation->nom_operation }}</td>
-                <td>{{ $operation->bailleur_id }}</td>
+                <td>{{ $operation->bailleur->nom }}</td>
                 <td>{{ $operation->commune_operation }}</td>
                 <td></td>
 

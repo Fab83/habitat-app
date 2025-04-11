@@ -33,37 +33,37 @@ class OperationController extends Controller
     {
         $validated = $request->validate([
             'nom_operation' => 'required|string|max:255',
-            'adresse_operation'=>'required|string',
-            'commune_operation'=>'required|string|max:255',
-            'reference_cadastre'=>'string|max:255',
-            'vefa_mod'=>'string|max:100',
-            'neuf_aa'=>'string|max:100',
-            'annee_prog'=>'string|max:100',
-            'promoteur'=>'string|max:255',
-            'numero_pc'=>'string|max:255',
-            'date_pc'=>'date',
-            'pc'=>'file', //Add
-            'nombre_logements'=>'integer',
-            'nombre_lls'=>'integer',
-            'nombre_plai'=>'integer',
-            'nombre_plai_agrement'=>'integer',//Add
-            'nombre_plus'=>'integer',
-            'nombre_plus_agrement'=>'integer',//Add
-            'nombre_ulsplus'=>'integer',
-            'nombre_ulspls'=>'integer',
-            'nombre_pls'=>'integer',
-            'nombre_pls_agrement'=>'integer', //Add
-            'nombre_psla'=>'integer',
-            'nombre_psla_agrement'=>'integer', //Add
-            'nombre_brs'=>'integer',
-            'nombre_lli'=>'integer',
-            'nombre_ulli'=>'integer',
-            'date_livraison'=>'date',
-            'nombre_logements_livres'=>'integer',
-            'RT'=>'string|max:255',
-            'inventaire_sru'=>'string|max:255',
-            'sig'=>'string|max:255',
-            'commentaires'=>'string',
+            'adresse_operation' => 'required|string',
+            'commune_operation' => 'required|string|max:255',
+            'reference_cadastre' => 'nullable|string|max:255',
+            'vefa_mod' => 'string|max:100',
+            'neuf_aa' => 'string|max:100',
+            'annee_prog' => 'nullable|string|max:100',
+            'promoteur' => 'nullable|string|max:255',
+            'numero_pc' => 'nullable|string|max:255',
+            'date_pc' => 'nullable|date',
+            'pc' => 'nullable|file', //Add
+            'nombre_logements' => 'nullable|integer',
+            'nombre_lls' => 'nullable|integer',
+            'nombre_plai' => 'nullable|integer',
+            'nombre_plai_agrement' => 'nullable|integer', //Add
+            'nombre_plus' => 'nullable|integer',
+            'nombre_plus_agrement' => 'nullable|integer', //Add
+            'nombre_ulsplus' => 'nullable|integer',
+            'nombre_ulspls' => 'nullable|integer',
+            'nombre_pls' => 'nullable|integer',
+            'nombre_pls_agrement' => 'nullable|integer', //Add
+            'nombre_psla' => 'nullable|integer',
+            'nombre_psla_agrement' => 'nullable|integer', //Add
+            'nombre_brs' => 'nullable|integer',
+            'nombre_lli' => 'nullable|integer',
+            'nombre_ulli' => 'nullable|integer',
+            'date_livraison' => 'nullable|date',
+            'nombre_logements_livres' => 'nullable|integer',
+            'RT' => 'nullable|string|max:255',
+            'inventaire_sru' => 'string|max:255',
+            'sig' => 'string|max:255',
+            'commentaires' => 'nullable|string',
             'bailleur_id' => 'required|exists:bailleurs,id',
         ]);
 
@@ -79,44 +79,45 @@ class OperationController extends Controller
 
     public function edit(Operation $operation)
     {
-        return view('operations.edit', compact('operation'));
+        $bailleurs = \App\Models\Bailleur::all();
+        return view('operations.edit', compact('operation', 'bailleurs'));
     }
 
     public function update(Request $request, Operation $operation)
     {
         $validated = $request->validate([
             'nom_operation' => 'required|string|max:255',
-            'adresse_operation'=>'required|string',
-            'commune_operation'=>'required|string|max:255',
-            'reference_cadastre'=>'string|max:255',
-            'vefa_mod'=>'string|max:100',
-            'neuf_aa'=>'string|max:100',
-            'annee_prog'=>'string|max:100',
-            'promoteur'=>'string|max:255',
-            'numero_pc'=>'string|max:255',
-            'date_pc'=>'date',
-            'pc'=>'file', //Add
-            'nombre_logements'=>'integer',
-            'nombre_lls'=>'integer',
-            'nombre_plai'=>'integer',
-            'nombre_plai_agrement'=>'integer',//Add
-            'nombre_plus'=>'integer',
-            'nombre_plus_agrement'=>'integer',//Add
-            'nombre_ulsplus'=>'integer',
-            'nombre_ulspls'=>'integer',
-            'nombre_pls'=>'integer',
-            'nombre_pls_agrement'=>'integer', //Add
-            'nombre_psla'=>'integer',
-            'nombre_psla_agrement'=>'integer', //Add
-            'nombre_brs'=>'integer',
-            'nombre_lli'=>'integer',
-            'nombre_ulli'=>'integer',
-            'date_livraison'=>'date',
-            'nombre_logements_livres'=>'integer',
-            'RT'=>'string|max:255',
-            'inventaire_sru'=>'string|max:255',
-            'sig'=>'string|max:255',
-            'commentaires'=>'string',
+            'adresse_operation' => 'required|string',
+            'commune_operation' => 'required|string|max:255',
+            'reference_cadastre' => 'nullable|string|max:255',
+            'vefa_mod' => 'string|max:100',
+            'neuf_aa' => 'string|max:100',
+            'annee_prog' => 'nullable|string|max:100',
+            'promoteur' => 'nullable|string|max:255',
+            'numero_pc' => 'nullable|string|max:255',
+            'date_pc' => 'nullable|date',
+            'pc' => 'nullable|file', //Add
+            'nombre_logements' => 'nullable|integer',
+            'nombre_lls' => 'nullable|integer',
+            'nombre_plai' => 'nullable|integer',
+            'nombre_plai_agrement' => 'nullable|integer', //Add
+            'nombre_plus' => 'nullable|integer',
+            'nombre_plus_agrement' => 'nullable|integer', //Add
+            'nombre_ulsplus' => 'nullable|integer',
+            'nombre_ulspls' => 'nullable|integer',
+            'nombre_pls' => 'nullable|integer',
+            'nombre_pls_agrement' => 'nullable|integer', //Add
+            'nombre_psla' => 'nullable|integer',
+            'nombre_psla_agrement' => 'nullable|integer', //Add
+            'nombre_brs' => 'nullable|integer',
+            'nombre_lli' => 'nullable|integer',
+            'nombre_ulli' => 'nullable|integer',
+            'date_livraison' => 'nullable|date',
+            'nombre_logements_livres' => 'nullable|integer',
+            'RT' => 'nullable|string|max:255',
+            'inventaire_sru' => 'string|max:255',
+            'sig' => 'string|max:255',
+            'commentaires' => 'nullable|string',
             'bailleur_id' => 'required|exists:bailleurs,id',
         ]);
 
