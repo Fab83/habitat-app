@@ -18,6 +18,7 @@
                 <th>Bailleur</th>
                 <th>Commune</th>
                 <th>Nombre LLS</th>
+                <th>Montant GE</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +28,8 @@
                 <td>{{ $operation->nom_operation }}</td>
                 <td>{{ $operation->bailleur->nom }}</td>
                 <td>{{ $operation->commune_operation }}</td>
+                <td>{{ $operation->nombre_lls }}</td>
+                <td>{{ $operation->garantieEmprunt->montant_total }} €</td>
                 <td></td>
 
                 {{-- Penser à ajouter visibilité fichier PC comme pour convention_cadre bailleur --}}

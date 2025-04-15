@@ -10,7 +10,8 @@ class GarantieEmprunt extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nom_operation', // Clé étrangère
+        // 'nom_operation', // Clé étrangère
+        'operation_id',
         'montant_total',
         'montant_plai_construction',
         'montant_plai_foncier',   
@@ -30,6 +31,6 @@ class GarantieEmprunt extends Model
 
     public function operation()
     {
-        return $this->belongsTo(Operation::class, 'nom_operation', 'nom_operation');
+        return $this->belongsTo(Operation::class); // Utilise la clé étrangère par défaut : operation_id
     }
 }

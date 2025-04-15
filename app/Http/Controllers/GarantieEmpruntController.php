@@ -16,9 +16,21 @@ class GarantieEmpruntController extends Controller
     {
         $validated = $request->validate([
             'nom_operation' => 'required|exists:operations,nom_operation',
-            'montant' => 'required|numeric',
-            'date_emprunt' => 'required|date',
-            'taux_interet' => 'required|numeric',
+            'montant_total',
+            'montant_plai_construction',
+            'montant_plai_foncier',   
+            'montant_pls_construction',
+            'montant_pls_foncier',
+            'montant_plus_construction',
+            'montant_plus_foncier',    
+            'montant_phb2',
+            'montant_booster',
+            'date_deliberation',
+            'nombre_logements_reserves',
+            'type_financement',
+            'numero_delib',
+            'bureau_conseil',
+            'date_bureau_conseil',
         ]);
 
         return GarantieEmprunt::create($validated);
@@ -32,9 +44,22 @@ class GarantieEmpruntController extends Controller
     public function update(Request $request, GarantieEmprunt $garantieEmprunt)
     {
         $validated = $request->validate([
-            'montant' => 'numeric',
-            'date_emprunt' => 'date',
-            'taux_interet' => 'numeric',
+            'nom_operation', // Clé étrangère
+            'montant_total',
+            'montant_plai_construction',
+            'montant_plai_foncier',   
+            'montant_pls_construction',
+            'montant_pls_foncier',
+            'montant_plus_construction',
+            'montant_plus_foncier',    
+            'montant_phb2',
+            'montant_booster',
+            'date_deliberation',
+            'nombre_logements_reserves',
+            'type_financement',
+            'numero_delib',
+            'bureau_conseil',
+            'date_bureau_conseil',
         ]);
 
         $garantieEmprunt->update($validated);

@@ -109,8 +109,8 @@
                                 <label class="form-check-label" for="vefa">VEFA</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="vefa_mod" id="mod" value="MOD"
-                                    {{ old('vefa_mod', $operation->vefa_mod) == 'MOD' ? 'checked' : '' }}>
+                                <input class="form-check-input" type="radio" name="vefa_mod" id="mod"
+                                    value="MOD" {{ old('vefa_mod', $operation->vefa_mod) == 'MOD' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="mod">MOD</label>
                             </div>
                             <div class="form-check form-check-inline">
@@ -239,92 +239,326 @@
                     <div class="row g-2">
                         <div class="col-6 mb-3">
                             <label for="nbLogements" class="form-label">Nombre logements total</label>
-                            <input type="number" name="nombre_logements" id="nbLogements" class="form-control" value="nombre_logements" {{ old('nombre_logements', $operation->nombre_logements) }}>
-                            </div>
+                            <input type="number" name="nombre_logements" id="nbLogements" class="form-control form-control-sm"
+                                value="{{ old('nombre_logements', $operation->nombre_logements) }}">
+                        </div>
                         <div class="col-6 mb-3">
                             <label for="nombre_lls" class="form-label">Nombre logements sociaux</label>
-                            <input type="number" name="nombre_lls" id="nombre_lls" class="form-control" value="nombre_lls" {{ old('nombre_lls', $operation->nombre_lls) }}>
-                        </div>
-                        </div>
-                        <div class="row g-2">
-                            <div class="col mb-3">
-                                <label for="nombre_plai_agrement" class="form-label">Nb PLAI (agrément)</label>
-                                <input type="number" name="nombre_plai_agrement" id="nombre_plai_agrement"
-                                    class="form-control" value="nombre_plai_agrement" {{ old('nombre_plai_agrement', $operation->nombre_plai_agrement) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_plai" class="form-label">Nb PLAI</label>
-                                <input type="number" name="nombre_plai" id="nombre_plai" class="form-control" value="nombre_plai" {{ old('nombre_plai', $operation->nombre_plai) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_plus_agrement" class="form-label">Nb PLUS (agrément)</label>
-                                <input type="number" name="nombre_plus_agrement" id="nombre_plus_agrement"
-                                    class="form-control" value="nombre_plus_agrement" {{ old('nombre_plus_agrement', $operation->nombre_plus_agrement) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_plus" class="form-label">Nb PLUS</label>
-                                <input type="number" name="nombre_plus" id="nombre_plus" class="form-control" value="nombre_plus" {{ old('nombre_plus', $operation->nombre_plus) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_ulsplus" class="form-label">Nb ulsplus</label>
-                                <input type="number" name="nombre_ulsplus" id="nombre_ulsplus" class="form-control" value="nombre_ulsplus" {{ old('nombre_ulsplus', $operation->nombre_ulsplus) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_ulspls" class="form-label">Nb ULSPLS</label>
-                                <input type="number" name="nombre_ulspls" id="nombre_ulspls" class="form-control" value="nombre_ulspls" {{ old('nombre_ulspls', $operation->nombre_ulspls) }}>
-                            </div>
-                        </div>
-                        <div class="row g-2">
-                            <div class="col mb-3">
-                                <label for="nombre_pls_agrement" class="form-label">Nb PLS (agrément)</label>
-                                <input type="number" name="nombre_pls_agrement" id="nombre_pls_agrement"
-                                    class="form-control" value="nombre_pls_agrement" {{ old('nombre_pls_agrement', $operation->nombre_pls_agrement) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_pls" class="form-label">Nb PLS</label>
-                                <input type="number" name="nombre_pls" id="nombre_pls" class="form-control" value="nombre_pls" {{ old('nombre_pls', $operation->nombre_pls) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_lli" class="form-label">Nb LLI</label>
-                                <input type="number" name="nombre_lli" id="nombre_lli" class="form-control" value="nombre_lli" {{ old('nombre_lli', $operation->nombre_lli) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_ulli" class="form-label">Nb ULLI</label>
-                                <input type="number" name="nombre_ulli" id="nombre_ulli" class="form-control" value="nombre_ulli" {{ old('nombre_ulli', $operation->nombre_ulli) }}>
-                            </div>
-                        </div>
-                        <hr class="my-2">
-                        <p class="lead text-center">Accession</p>
-                        <hr class="my-2">
-                        <div class="row g-2">
-                            <div class="col mb-3">
-                                <label for="nombre_psla_agrement" class="form-label">Nb PSLA (agrément)</label>
-                                <input type="number" name="nombre_psla_agrement" id="nombre_psla_agrement"
-                                    class="form-control" value="nombre_psla_agrement" {{ old('nombre_psla_agrement', $operation->nombre_psla_agrement) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_psla" class="form-label">Nb PSLA</label>
-                                <input type="number" name="nombre_psla" id="nombre_psla" class="form-control" value="nombre_psla" {{ old('nombre_psla', $operation->nombre_psla) }}>
-                            </div>
-                            <div class="col mb-3">
-                                <label for="nombre_brs" class="form-label">Nb BRS</label>
-                                <input type="number" name="nombre_brs" id="nombre_brs" class="form-control" value="nombre_brs" {{ old('nombre_brs', $operation->nombre_brs) }}>
-                            </div>
+                            <input type="number" name="nombre_lls" id="nombre_lls" class="form-control form-control-sm"
+                                value="{{ old('nombre_lls', $operation->nombre_lls) }}">
                         </div>
                     </div>
-                </div>
-                {{-- Onglet Garanties --}}
-                <div class="tab-pane fade bg-success-subtle" id="garantie" role="tabpanel">
                     <div class="row g-2">
                         <div class="col mb-3">
-
+                            <label for="nombre_plai_agrement" class="form-label">Nb PLAI (agrément)</label>
+                            <input type="number" name="nombre_plai_agrement" id="nombre_plai_agrement"
+                                class="form-control" value="{{ old('nombre_plai_agrement', $operation->nombre_plai_agrement) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_plai" class="form-label">Nb PLAI</label>
+                            <input type="number" name="nombre_plai" id="nombre_plai" class="form-control"
+                                value="{{ old('nombre_plai', $operation->nombre_plai) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_plus_agrement" class="form-label">Nb PLUS (agrément)</label>
+                            <input type="number" name="nombre_plus_agrement" id="nombre_plus_agrement"
+                                class="form-control" value="{{ old('nombre_plus_agrement', $operation->nombre_plus_agrement) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_plus" class="form-label">Nb PLUS</label>
+                            <input type="number" name="nombre_plus" id="nombre_plus" class="form-control"
+                                value="{{ old('nombre_plus', $operation->nombre_plus) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_ulsplus" class="form-label">Nb ulsplus</label>
+                            <input type="number" name="nombre_ulsplus" id="nombre_ulsplus" class="form-control"
+                                value="{{ old('nombre_ulsplus', $operation->nombre_ulsplus) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_ulspls" class="form-label">Nb ULSPLS</label>
+                            <input type="number" name="nombre_ulspls" id="nombre_ulspls" class="form-control"
+                                value="{{ old('nombre_ulspls', $operation->nombre_ulspls) }}">
+                        </div>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col mb-3">
+                            <label for="nombre_pls_agrement" class="form-label">Nb PLS (agrément)</label>
+                            <input type="number" name="nombre_pls_agrement" id="nombre_pls_agrement"
+                                class="form-control" value="{{ old('nombre_pls_agrement', $operation->nombre_pls_agrement) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_pls" class="form-label">Nb PLS</label>
+                            <input type="number" name="nombre_pls" id="nombre_pls" class="form-control"
+                                value="{{ old('nombre_pls', $operation->nombre_pls) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_lli" class="form-label">Nb LLI</label>
+                            <input type="number" name="nombre_lli" id="nombre_lli" class="form-control"
+                                value="{{ old('nombre_lli', $operation->nombre_lli) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_ulli" class="form-label">Nb ULLI</label>
+                            <input type="number" name="nombre_ulli" id="nombre_ulli" class="form-control"
+                                value="{{ old('nombre_ulli', $operation->nombre_ulli) }}">
+                        </div>
+                    </div>
+                    <hr class="my-2">
+                    <p class="lead text-center">Accession</p>
+                    <hr class="my-2">
+                    <div class="row g-2">
+                        <div class="col mb-3">
+                            <label for="nombre_psla_agrement" class="form-label">Nb PSLA (agrément)</label>
+                            <input type="number" name="nombre_psla_agrement" id="nombre_psla_agrement"
+                                class="form-control" value="{{ old('nombre_psla_agrement', $operation->nombre_psla_agrement) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_psla" class="form-label">Nb PSLA</label>
+                            <input type="number" name="nombre_psla" id="nombre_psla" class="form-control"
+                                value="{{ old('nombre_psla', $operation->nombre_psla) }}">
+                        </div>
+                        <div class="col mb-3">
+                            <label for="nombre_brs" class="form-label">Nb BRS</label>
+                            <input type="number" name="nombre_brs" id="nombre_brs" class="form-control"
+                                value="{{ old('nombre_brs', $operation->nombre_brs) }}">
                         </div>
                     </div>
                 </div>
-                <div class="mt-4">
-                    <button type="submit" class="btn btn-primary">Mettre à jour</button>
-                    <a href="{{ route('operations.index') }}" class="btn btn-secondary">Annuler</a>
+                
+                {{-- Fix the garantie tab inputs --}}
+                <div class="tab-pane fade bg-success-subtle" id="garantie" role="tabpanel">
+                    <div class="container roundForm green">
+                        <h1 class="display-6">Garanties Emprunt</h1>
+                        <div class="row g-2">
+                            <div class="col-md-6 mb-3">
+                                <label for="montant_total" class="form-label">Montant total</label>
+                                <input type="number" 
+                                    name="garantie_emprunt[montant_total]" 
+                                    id="montant_total"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('garantie_emprunt.montant_total', $operation->garantieEmprunt->montant_total ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="montant_plai_construction" class="form-label">Montant PLAI Construction</label>
+                                <input type="number" name="montant_plai_construction" id="montant_plai_construction"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('montant_plai_construction', $operation->garantieEmprunt->montant_plai_construction ?? 0) }}"
+                                                            {{-- <input type="number" name="montant_plai_construction" id="montant_plai_construction"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_plai_construction', $operation->garantieEmprunt->montant_plai_construction ?? '') }}"> --}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="montant_plai_foncier" class="form-label">Montant PLAI Foncier</label>
+                                <input type="number" name="montant_plai_foncier" id="montant_plai_foncier"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('montant_plai_foncier', $operation->garantieEmprunt->montant_plai_foncier ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="montant_pls_construction" class="form-label">Montant PLS Construction</label>
+                                <input type="number" name="montant_pls_construction" id="montant_pls_construction"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('montant_pls_construction', $operation->garantieEmprunt->montant_pls_construction ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="montant_pls_foncier" class="form-label">Montant PLS Foncier</label>
+                                <input type="number" name="montant_pls_foncier" id="montant_pls_foncier"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('montant_pls_foncier', $operation->garantieEmprunt->montant_pls_foncier ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="montant_plus_construction" class="form-label">Montant PLUS Construction</label>
+                                <input type="number" name="montant_plus_construction" id="montant_plus_construction"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('montant_plus_construction', $operation->garantieEmprunt->montant_plus_construction ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="montant_plus_foncier" class="form-label">Montant PLUS Foncier</label>
+                                <input type="number" name="montant_plus_foncier" id="montant_plus_foncier"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('montant_plus_foncier', $operation->garantieEmprunt->montant_plus_foncier ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="montant_phb2" class="form-label">Montant PHB2</label>
+                                <input type="number" name="montant_phb2" id="montant_phb2"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('montant_phb2', $operation->garantieEmprunt->montant_phb2 ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="montant_booster" class="form-label">Montant Booster</label>
+                                <input type="number" name="montant_booster" id="montant_booster"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('montant_booster', $operation->garantieEmprunt->montant_booster ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="date_deliberation" class="form-label">Date Délibération</label>
+                                <input type="date" name="date_deliberation" id="date_deliberation"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('date_deliberation', $operation->garantieEmprunt->date_deliberation ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="nombre_logements_reserves" class="form-label">Nombre de logements réservés</label>
+                                <input type="number" name="nombre_logements_reserves" id="nombre_logements_reserves"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('nombre_logements_reserves', $operation->garantieEmprunt->nombre_logements_reserves ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="type_financement" class="form-label">Type de financement</label>
+                                <input type="text" name="type_financement" id="type_financement"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('type_financement', $operation->garantieEmprunt->type_financement ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="numero_delib" class="form-label">Numéro Délibération</label>
+                                <input type="text" name="numero_delib" id="numero_delib"
+                                    class="form-control form-control-sm"
+                                    value="{{ old('numero_delib', $operation->garantieEmprunt->numero_delib ?? '') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="bureau_conseil" class="form-label">Bureau Conseil</label>
+                                <select name="bureau_conseil" id="bureau_conseil" class="form-select form-select-sm">
+                                    <option value="Bureau"
+                                        {{ old('garantie_emprunt.bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Bureau' ? 'selected' : '' }}>
+                                        Bureau</option>
+                                    <option value="Conseil"
+                                        {{ old('garantie_emprunt.bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Conseil' ? 'selected' : '' }}>
+                                        Conseil</option>
+                                    <option value="Non renseigné"
+                                        {{ old('garantie_emprunt.bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Non renseigné' ? 'selected' : '' }}>
+                                        Non renseigné</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        </form>
+                
+                {{-- Fix the date inputs --}}
+                <div class="col-2">
+                    <label for="dateLivraison" class="form-label">Date livraison</label>
+                    <input type="date" class="form-control" id="dateLivraison" name="date_livraison"
+                        value="{{ old('date_livraison', $operation->date_livraison) }}">
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="commentaires" class="form-label">Commentaires</label>
+                        <textarea class="form-control" placeholder="Commentaires divers sur opération" id="commentaires"
+                            name="commentaires">{{ old('commentaires', $operation->commentaires) }}</textarea>
+                    </div>
+                </div>
+            </div>
+            {{-- Onglet Garanties --}}
+            <div class="tab-pane fade bg-success-subtle" id="garantie" role="tabpanel">
+                <div class="container roundForm green">
+                    <h1 class="display-6">Garanties Emprunt</h1>
+                    <div class="row g-2">
+                        <div class="col-md-6 mb-3">
+                            <label for="montant_total" class="form-label">Montant total</label>
+                            <input type="number" name="montant_total" id="montant_total"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_total', $operation->garantieEmprunt->montant_total ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="montant_plai_construction" class="form-label">Montant PLAI Construction</label>
+                            <input type="number" name="montant_plai_construction" id="montant_plai_construction"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_plai_construction', $operation->garantieEmprunt->montant_plai_construction ?? 0) }}"
+}}">
+                                                            {{-- <input type="number" name="montant_plai_construction" id="montant_plai_construction"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_plai_construction', $operation->garantieEmprunt->montant_plai_construction ?? '') }}"> --}}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="montant_plai_foncier" class="form-label">Montant PLAI Foncier</label>
+                            <input type="number" name="montant_plai_foncier" id="montant_plai_foncier"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_plai_foncier', $operation->garantieEmprunt->montant_plai_foncier ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="montant_pls_construction" class="form-label">Montant PLS Construction</label>
+                            <input type="number" name="montant_pls_construction" id="montant_pls_construction"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_pls_construction', $operation->garantieEmprunt->montant_pls_construction ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="montant_pls_foncier" class="form-label">Montant PLS Foncier</label>
+                            <input type="number" name="montant_pls_foncier" id="montant_pls_foncier"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_pls_foncier', $operation->garantieEmprunt->montant_pls_foncier ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="montant_plus_construction" class="form-label">Montant PLUS Construction</label>
+                            <input type="number" name="montant_plus_construction" id="montant_plus_construction"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_plus_construction', $operation->garantieEmprunt->montant_plus_construction ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="montant_plus_foncier" class="form-label">Montant PLUS Foncier</label>
+                            <input type="number" name="montant_plus_foncier" id="montant_plus_foncier"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_plus_foncier', $operation->garantieEmprunt->montant_plus_foncier ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="montant_phb2" class="form-label">Montant PHB2</label>
+                            <input type="number" name="montant_phb2" id="montant_phb2"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_phb2', $operation->garantieEmprunt->montant_phb2 ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="montant_booster" class="form-label">Montant Booster</label>
+                            <input type="number" name="montant_booster" id="montant_booster"
+                                class="form-control form-control-sm"
+                                value="{{ old('montant_booster', $operation->garantieEmprunt->montant_booster ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="date_deliberation" class="form-label">Date Délibération</label>
+                            <input type="date" name="date_deliberation" id="date_deliberation"
+                                class="form-control form-control-sm"
+                                value="{{ old('date_deliberation', $operation->garantieEmprunt->date_deliberation ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre_logements_reserves" class="form-label">Nombre de logements réservés</label>
+                            <input type="number" name="nombre_logements_reserves" id="nombre_logements_reserves"
+                                class="form-control form-control-sm"
+                                value="{{ old('nombre_logements_reserves', $operation->garantieEmprunt->nombre_logements_reserves ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="type_financement" class="form-label">Type de financement</label>
+                            <input type="text" name="type_financement" id="type_financement"
+                                class="form-control form-control-sm"
+                                value="{{ old('type_financement', $operation->garantieEmprunt->type_financement ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="numero_delib" class="form-label">Numéro Délibération</label>
+                            <input type="text" name="numero_delib" id="numero_delib"
+                                class="form-control form-control-sm"
+                                value="{{ old('numero_delib', $operation->garantieEmprunt->numero_delib ?? '') }}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="bureau_conseil" class="form-label">Bureau Conseil</label>
+                            <select name="bureau_conseil" id="bureau_conseil" class="form-select form-select-sm">
+                                <option value="Bureau"
+                                    {{ old('bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Bureau' ? 'selected' : '' }}>
+                                    Bureau</option>
+                                <option value="Conseil"
+                                    {{ old('bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Conseil' ? 'selected' : '' }}>
+                                    Conseil</option>
+                                <option value="Non renseigné"
+                                    {{ old('bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Non renseigné' ? 'selected' : '' }}>
+                                    Non renseigné</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="date_bureau_conseil" class="form-label">Date Bureau/Conseil</label>
+                            <input type="date" name="date_bureau_conseil" id="date_bureau_conseil"
+                                class="form-control form-control-sm"
+                                value="{{ old('date_bureau_conseil', $operation->garantieEmprunt->date_bureau_conseil ?? '') }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="mt-4">
+        <button type="submit" class="btn btn-primary">Mettre à jour</button>
+        <a href="{{ route('operations.index') }}" class="btn btn-secondary">Annuler</a>
+    </div>
+    </form>
     </div>
 @endsection

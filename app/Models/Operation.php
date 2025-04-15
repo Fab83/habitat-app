@@ -41,7 +41,8 @@ class Operation extends Model
         'RT',
         'inventaire_sru',
         'sig',
-        'commentaires'
+        'commentaires',
+        'garantie_emprunt' // Add this to allow nested form data
     ];
 
     public function bailleur()
@@ -50,6 +51,21 @@ class Operation extends Model
     }
     public function garantieEmprunt()
     {
-        return $this->hasOne(GarantieEmprunt::class, 'nom_operation', 'nom_operation');
+        return $this->hasOne(GarantieEmprunt::class);
+    }
+
+    // Add this method to handle nested garantie_emprunt data
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function ($operation) {
+            if (request()->has('garantie_emprunt')) {
+                $operation->garantieEmprunt()->updateOrCreate(
+                    ['operation_id' => $operation->id],
+                    request()->get('garantie_emprunt')
+                );
+            }
+        });
     }
 }

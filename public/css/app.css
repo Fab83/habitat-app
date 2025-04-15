@@ -1,0 +1,15 @@
+.roundForm {
+    padding: 1%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.green {
+    background-color: rgb(245, 253, 235);
+    border: 1px solid rgb(164, 197, 124);
+}
+
+.orange{
+    background-color: rgb(250, 236, 215);
+    border: 1px solid rgb(255, 179, 65);
+}

@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>@yield('title')</title>
 </head>
 
 <body>
 
     {{-- Navbar --}}
-    <nav class="navbar navbar-expand-lg bg-primary-subtle mb-4">
+    <nav class="navbar navbar-expand-lg bg-primary-subtle mb-4 sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">Habitat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

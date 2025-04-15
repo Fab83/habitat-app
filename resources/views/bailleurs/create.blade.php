@@ -4,6 +4,16 @@
 <div class="container">
     <h1>Ajouter un bailleur</h1>
 
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form action="{{ route('bailleurs.store') }}" method="POST" enctype="multipart/form-data">
 
         @csrf
@@ -14,8 +24,8 @@
             </div>
 
             <div class="col-md-4 mb-3">
-                <label for="commune_bailleur" class="form-label">Commune</label>
-                <input type="text" name="commune_bailleur" class="form-control" value="{{ old('commune_bailleur') }}">
+                <label for="commune_bailleur" class="form-label">Commune *</label>
+                <input type="text" name="commune_bailleur" class="form-control" value="{{ old('commune_bailleur') }}" required>
             </div>
 
             <div class="col-md-4 mb-3">

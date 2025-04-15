@@ -10,7 +10,8 @@ class Bailleur extends Model
     protected $fillable = [
         'nom',
         'commune_bailleur',
-        'convention_cadre'
+        'convention_cadre',
+        'nom_fichier_original'
     ];
     
     public function operations()

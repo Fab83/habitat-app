@@ -83,6 +83,26 @@ class BailleurController extends Controller
             'commune_bailleur' => 'required|string|max:255',
             'convention_cadre' => 'nullable|file|max:4096',
         ]);
+
+        if ($request->hasFile('convention_cadre')) {
+            $file = $request->file('convention_cadre');
+    
+            if (!$file->isValid()) {
+                return back()->withErrors(['convention_cadre' => 'Fichier non valide']);
+            }
+    
+            // Delete old file if exists
+            if ($bailleur->convention_cadre) {
+                Storage::disk('public')->delete($bailleur->convention_cadre);
+            }
+    
+            // Store new file
+            $path = $file->store('conventions', 'public');
+    
+            $validated['convention_cadre'] = $path;
+            $validated['nom_fichier_original'] = $file->getClientOriginalName();
+        }
+
         $bailleur->update($validated);
         return redirect()->route('bailleurs.index')->with('success', 'Bailleur updated successfully.');
     }

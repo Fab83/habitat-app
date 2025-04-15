@@ -10,29 +10,30 @@ class ApiDataController extends Controller
     {
         $baseUrl = 'https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/buildingref-france-majic-parcelles-millesime/records';
     
-        // Construction manuelle de l’URL avec les bons filtres
+        // Construction manuelle de l'URL avec les bons filtres
         $query = http_build_query([
-            'limit' => 20,
+            'limit' => 30,
         ]);
     
         // Ajout manuel des filtres refine
         $refines = [
             'dep_code:"83"',
             'com_arm_name:"SAINT RAPHAEL"',
+            // 'com_arm_name:"FREJUS"',
             'label_code_droit:"Propriétaire"',
             'year:"2021"',
             'groupe_proprietaire:"Commune"',
             'nature_culture:"Terrains à bâtir"',
         ];
     
-        // Encodage correct des filtres
         foreach ($refines as $refine) {
             $query .= '&refine=' . urlencode($refine);
         }
     
         $url = "$baseUrl?$query";
     
-        $response = Http::get($url);
+        // Skip SSL verification
+        $response = Http::withoutVerifying()->get($url);
     
         if ($response->successful()) {
             $data = $response->json();
