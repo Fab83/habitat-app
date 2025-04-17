@@ -3,140 +3,146 @@
 @section('content')
     <div class="container">
         <h1 class="display-6 py-3">Opération : {{ $operation->nom_operation }}</h1>
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-hover">
             <tr>
-                <th>Année programmation</th>
-                <td>{{ $operation->annee_prog }}</td>
-                <th>Bailleur</th>
+                <td>Année programmation</td>
+                <td><p class="txtTable">{{ $operation->annee_prog }}</p></td>
+                <td>Bailleur</td>
                 <td>{{ $operation->bailleur->nom }}</td>
-                <th>Commune</th>
+                <td>Commune</td>
                 <td>{{ $operation->commune_operation }}</td>
 
             </tr>
             <tr>                
-                <th>Adresse</th>
+                <td>Adresse</td>
                 <td colspan="3">{{ $operation->adresse_operation }}</td>
-                <th>Cadastre</th>
+                <td>Cadastre</td>
                 <td>{{ $operation->reference_cadastre }}</td>
+                <td></td>
             </tr>
             <tr>
-                <th>VEFA/MOD</th>
+                <td>VEFA/MOD</td>
                 <td>{{ $operation->vefa_mod }}</td>
-                <th>Neuf / AA</th>
+                <td>Neuf / AA</td>
                 <td>{{ $operation->neuf_aa }}</td>
-                <th>Promoteur</th>
+                <td>Promoteur</td>
                 <td>{{ $operation->promoteur }}</td>
             </tr>
             <tr>
-                <th>Numéro PC</th>
+                <td>Numéro PC</td>
                 <td>{{ $operation->numero_pc }}</td>
-                <th>Date PC</th>
+                <td>Date PC</td>
                 <td>{{ $operation->date_pc }}</td>
-                <th>PC</th>
+                <td>PC</td>
                 <td>{{ $operation->pc }}</td>
             </tr>
-            <tr><td colspan="6"><h3 class="text-center">LOGEMENTS</h3></td></tr>
+            <tr><td colspan="6"><h3 class="text-center">LOCATION - Agréments</h3></td></tr>
             <tr>
-                <th>Nombre logements</th>
+                <td>Nombre logements</td>
                 <td>{{ $operation->nombre_logements }}</td>
-                <th>Nombre LLS</th>
+                <td>Nombre LLS</td>
                 <td>{{ $operation->nombre_lls }}</td>
-                <th>Nombre PLAI</th>
+                <td>Nombre PLAI Agrément</td>
+                <td>{{ $operation->nombre_plai_agrement }}</td>
+            </tr>
+                <td>Nombre PLUS Agrément</td>
+                <td>{{ $operation->nombre_plus_agrement }}</td>
+                <td></td>
+                <td></td>
+            <tr><td colspan="6"><h3 class="text-center">ACCESSION - Agréments</h3></td></tr>
+                <td>Nombre PSLA Agrément</td>
+                <td>{{ $operation->nombre_psla_agrement }}</td>
+                <td>Nombre BRS</td>
+                <td>{{ $operation->nombre_brs }}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nombre LLI</td>
+                <td>{{ $operation->nombre_lli }}</td>
+                <td>Nombre PLUS</td>
+                <td>{{ $operation->nombre_plus }}</td>
+                <td>Nombre PLAI</td>
                 <td>{{ $operation->nombre_plai }}</td>
             </tr>
             <tr>
-                <th>Nombre PLAI Agrément</th>
-                <td>{{ $operation->nombre_plai_agrement }}</td>
-
-                <th>Nombre PLUS</th>
-                <td>{{ $operation->nombre_plus }}</td>
-
-                <th>Nombre PLUS Agrément</th>
-                <td>{{ $operation->nombre_plus_agrement }}</td>
-            </tr>
-            <tr>
-                <th>Nombre ULS+</th>
+                <td>Nombre ULS+</td>
                 <td>{{ $operation->nombre_ulsplus }}</td>
-                <th>Nombre ULS-</th>
+                <td>Nombre ULS-</td>
                 <td>{{ $operation->nombre_ulspls }}</td>
-                <th>Nombre PLS</th>
+                <td>Nombre PLS</td>
                 <td>{{ $operation->nombre_pls }}</td>
             </tr>
             <tr>
-                <th>Nombre PLS Agrément</th>
+                <td>Nombre PLS Agrément</td>
                 <td>{{ $operation->nombre_pls_agrement }}</td>
-                <th>Nombre PSLA</th>
+                <td>Nombre PSLA</td>
                 <td>{{ $operation->nombre_psla }}</td>
-                <th>Nombre PSLA Agrément</th>
-                <td>{{ $operation->nombre_psla_agrement }}</td>
+<td></td>
             </tr>
             <tr>
-                <th>Nombre BRS</th>
-                <td>{{ $operation->nombre_brs }}</td>
-                <th>Nombre LLI</th>
-                <td>{{ $operation->nombre_lli }}</td>
-                <th>Nombre ULLI</th>
+                <td>Nombre ULLI</td>
                 <td>{{ $operation->nombre_ulli }}</td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-                <th>Date livraison</th>
+                <td>Date livraison</td>
                 <td>{{ $operation->date_livraison }}</td>
-                <th>Nombre logements livrés</th>
+                <td>Nombre logements livrés</td>
                 <td>{{ $operation->nombre_logements_livres }}</td>
-                <th>RT</th>
+                <td>RT</td>
                 <td>{{ $operation->RT }}</td>
             </tr>
             <tr><td colspan="6"><h3 class="text-center">DIVERS</h3></td></tr>
             <tr>
-                <th>Inventaire SRU</th>
+                <td>Inventaire SRU</td>
                 <td>{{ $operation->inventaire_sru }}</td>
-                <th>SIG</th>
+                <td>SIG</td>
                 <td>{{ $operation->sig }}</td>
-                <th>Commentaires</th>
+                <td>Commentaires</td>
                 <td>{{ $operation->commentaires }}</td>
             </tr>
             <tr><td colspan="6"><h3 class="text-center">GARANTIES</h3></td></tr>
-
             <tr>
-                <th>Montant GE</th>
+                <td>Montant GE</td>
                 <td>{{ $operation->garantieEmprunt->montant_total }} €</td>
-                            <th>Logements réservés (GE)</th>
+                            <td>Logements réservés (GE)</td>
                 <td>{{ $operation->garantieEmprunt->nombre_logements_reserves }}</td>                
-                <th>Financement</th>
+                <td>Financement</td>
                 <td>{{ $operation->garantieEmprunt->type_financement }}
                     </td>
                 </tr>
             <tr>
-                <th>Bureau/conseil</th>
+                <td>Bureau/conseil</td>
                 <td>{{ $operation->garantieEmprunt->bureau_conseil }}</td>
-                <th>Délibération</th>
+                <td>Délibération</td>
                 <td>N° {{ $operation->garantieEmprunt->numero_delib }}</td>
-                <th>Délibération</th>
+                <td>Délibération</td>
                 <td><a href="#">Lien Fichier</a></td>
             </tr>
             <tr>
-                <th>Montant PLAI Const.</th>
+                <td>Montant PLAI Const.</td>
                 <td>{{ $operation->garantieEmprunt->montant_plai_construction }} €</td>
-                <th>Montant PLAI Foncier</th>
+                <td>Montant PLAI Foncier</td>
                 <td>{{ $operation->garantieEmprunt->montant_plai_foncier }} €</td>
-            <th>Montant PLS Const.</th>
+            <td>Montant PLS Const.</td>
             <td>{{ $operation->garantieEmprunt->montant_pls_construction }} €</td>
             </tr>
             <tr>
-            <th>Montant PLS Foncier</th>
+            <td>Montant PLS Foncier</td>
             <td>{{ $operation->garantieEmprunt->montant_pls_foncier }} €</td>
-            <th>Montant PLUS Construction</th>
+            <td>Montant PLUS Construction</td>
             <td>{{ $operation->garantieEmprunt->montant_plus_construction }} €</td>
-            <th>Montant PLUS Foncier</th>
+            <td>Montant PLUS Foncier</td>
             <td>{{ $operation->garantieEmprunt->montant_plus_foncier }} €</td>
             </tr>
         </table>
 
         <hr class="my-3">
         <a href="{{ route('operations.edit', $operation->id) }}" class="btn btn-primary btn-sm">Modifier</a>
-        <form action="{{ route('operations.destroy', $operation->id) }}" method="POST" style="display:inline;">
+        <form action="{{ route('operations.destroy', $operation->id) }}" metdod="POST" style="display:inline;">
             @csrf
-            @method('DELETE')
+            {{-- @metdod('DELETE') --}}
             <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
         </form>
     @endsection

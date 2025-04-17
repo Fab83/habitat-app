@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Bailleur;
 use App\Models\Operation;
-use App\Models\GarantieEmprunt;
+use App\Models\Programme;
 use Illuminate\Http\Request;
+use App\Models\GarantieEmprunt;
 
 class OperationController extends Controller
 {
@@ -21,10 +22,13 @@ class OperationController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
         $bailleurs = Bailleur::all();
-        return view('operations.create', compact('bailleurs'));
+        $programmes = Programme::all();
+        $programme_id = $request->get('programme_id');
+        
+        return view('operations.create', compact('bailleurs', 'programmes', 'programme_id'));
     }
 
     /**
@@ -33,6 +37,7 @@ class OperationController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'programme_id' => 'required|exists:programmes,id',
             'nom_operation' => 'required|string|max:255',
             'adresse_operation' => 'required|string',
             'commune_operation' => 'required|string|max:255',
@@ -107,14 +112,6 @@ class OperationController extends Controller
             'date_bureau_conseil' => $request->date_bureau_conseil,
         ]);
 
-        // $garantie = GarantieEmprunt::create([
-        //     'operation_id' => $operation->id,
-        //     'nom_operation' => $operation->nom_operation,
-        //     'montant_total' => $request->montant_total,
-        //     // ...
-        // ]);
-        
-        // dd($garantie);
         return redirect()->route('operations.index')->with('success', 'Opération créée avec succès.');
     }
 
@@ -127,13 +124,15 @@ class OperationController extends Controller
     public function edit(Operation $operation)
     {
         $operation->load('garantieEmprunt');
-        $bailleurs = \App\Models\Bailleur::all();
-        return view('operations.edit', compact('operation', 'bailleurs'));
+        $bailleurs = Bailleur::all();
+        $programmes = Programme::all();
+        return view('operations.edit', compact('operation', 'bailleurs', 'programmes'));
     }
 
     public function update(Request $request, Operation $operation)
     {
         $validated = $request->validate([
+            'programme_id' => 'required|exists:programmes,id',
             'nom_operation' => 'required|string|max:255',
             'adresse_operation' => 'required|string',
             'commune_operation' => 'required|string|max:255',

@@ -47,6 +47,18 @@
                 {{-- Onglet Opération --}}
                 <div class="tab-pane fade show active" id="operation" role="tabpanel">
                     <div class="row g-2">
+                        <div class="form-group">
+                            <label for="programme_id">Programme</label>
+                            <select name="programme_id" id="programme_id" class="form-control">
+                                @foreach($programmes as $programme)
+                                    <option value="{{ $programme->id }}" {{ old('programme_id', $operation->programme_id ?? '') == $programme->id ? 'selected' : '' }}>
+                                        {{ $programme->nom }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-2">
                         {{-- Nom --}}
                         <div class="col mb-3">
                             <label for="nom_operation" class="form-label">Opération</label>

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Programme;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Operation extends Model
 {
@@ -53,6 +54,10 @@ class Operation extends Model
     {
         return $this->hasOne(GarantieEmprunt::class);
     }
+    public function programme()
+{
+    return $this->belongsTo(Programme::class);
+}
 
     // Add this method to handle nested garantie_emprunt data
     protected static function boot()
