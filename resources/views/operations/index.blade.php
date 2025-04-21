@@ -34,7 +34,8 @@
                 <td>{{ $operation->bailleur->nom }}</td>
                 <td>{{ $operation->commune_operation }}</td>
                 <td>{{ $operation->nombre_lls }}</td>
-                <td>{{ $operation->garantieEmprunt->montant_total }} €</td>
+                <td>{{ number_format($operation->garantieEmprunt->montant_total, 0, ',', ' ') }} €</td>
+
 
                 {{-- Penser à ajouter visibilité fichier PC comme pour convention_cadre bailleur --}}
                 <td>

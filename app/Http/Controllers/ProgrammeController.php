@@ -25,6 +25,7 @@ class ProgrammeController extends Controller
         $validated = $request->validate([
             'nom' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'date_programme' => 'required|string',
             'bailleur_id' => 'required|exists:bailleurs,id',
         ]);
 
@@ -50,6 +51,7 @@ class ProgrammeController extends Controller
         $validated = $request->validate([
             'nom' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'date_programme' => 'required|string',
         ]);
 
         $programme->update($validated);
@@ -60,7 +62,6 @@ class ProgrammeController extends Controller
     public function destroy(Programme $programme)
     {
         $programme->delete();
-
         return redirect()->route('programmes.index')->with('success', 'Programme supprimé.');
     }
 }

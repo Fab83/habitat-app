@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->text('description')->nullable();
+            $table->string('date_programme')->nullable();
             $table->foreignId('bailleur_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

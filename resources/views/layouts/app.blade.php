@@ -64,7 +64,10 @@
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     
     @stack('scripts')
-
 </body>
-
+<footer class="bg-light text-center text-lg-start mt-4" style="width: 100%;">
+    <div class="text-center p-3" style="background-color: rgba(160, 196, 220, 0.2);">
+        © {{ date('Y') }} Habitat. Tous droits réservés.
+    </div>
+</footer>
 </html>

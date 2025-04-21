@@ -16,7 +16,8 @@
         </select>
     </div>
     <div class="col-md-2">
-        <p>année programmation</p>
+        <label for="annee" class="form-label">Année prog.</label>
+        <input type="text" name="date_programme" class="form-control" value="{{ old('date_programme', $programme->date_programme ?? '') }}">
     </div>
     <div class="row">
         <div class="col mb-3">

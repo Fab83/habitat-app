@@ -116,6 +116,16 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="annulation" id="annulation_oui" value="oui">
+                                <label class="form-check-label" for="annulation_oui">Annulée</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="annulation" id="annulation_non" value="non" checked>
+                                <label class="form-check-label" for="annulation_non">Non annulée</label>
+                            </div>
+                        </div>
                         <div class="row">
                             {{-- Année prog --}}
                             <div class="col-md-2 mb-3">
@@ -474,7 +484,9 @@
                 osmLink.classList.add('disabled');
             } else {
                 const query = encodeURIComponent(`${adresse} ${commune}`);
-                osmLink.href = `https://www.openstreetmap.org/search?query=${query}`;
+                // osmLink.href = `https://www.openstreetmap.org/search?query=${query}`;
+                osmLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
+
                 osmLink.classList.remove('disabled');
             }
         }

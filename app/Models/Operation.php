@@ -11,9 +11,11 @@ class Operation extends Model
     use HasFactory;
     protected $fillable = [
         'nom_operation',
+        'programme_id',
         'bailleur_id',
         'adresse_operation',
         'commune_operation',
+        'annulation',
         'reference_cadastre',
         'vefa_mod',
         'neuf_aa',

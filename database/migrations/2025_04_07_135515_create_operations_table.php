@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nom_operation');
             $table->string('adresse_operation');
             $table->string('commune_operation');
+            $table->string('annulation');
             $table->string('reference_cadastre')->nullable();
             $table->string('vefa_mod')->nullable();
             $table->string('neuf_aa')->nullable();
@@ -23,7 +24,12 @@ return new class extends Migration
             $table->string('promoteur')->nullable();
             $table->string('numero_pc')->nullable();
             $table->string('date_pc')->nullable();
+            $table->string('pc')->nullable();
             $table->integer('nombre_logements')->nullable();
+            $table->integer('nombre_plai_agrement')->nullable();
+            $table->integer('nombre_plus_agrement')->nullable();
+            $table->integer('nombre_pls_agrement')->nullable();
+            $table->integer('nombre_psla_agrement')->nullable();
             $table->integer('nombre_lls')->nullable();
             $table->integer('nombre_plai')->nullable();
             $table->integer('nombre_plus')->nullable();
