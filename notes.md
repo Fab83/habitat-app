@@ -122,13 +122,3 @@ php artisan serve
 composer --version
 git status
 ```
-
----
-
-SQL
-
-INSERT INTO `bailleurs`(`id`, `nom`, `commune_bailleur`, `convention_cadre`, `created_at`, `updated_at`, `nom_fichier_original`) VALUES ('1','bailleur test','Commune test','', '2025-04-11 15:05:58','2025-04-11 15:05:58','')
-
-INSERT INTO `operations`(`id`, `nom_operation`, `adresse_operation`, `commune_operation`, `reference_cadastre`, `vefa_mod`, `neuf_aa`, `annee_prog`, `promoteur`, `numero_pc`, `date_pc`, `nombre_logements`, `nombre_lls`, `nombre_plai`, `nombre_plus`, `nombre_ulsplus`, `nombre_ulspls`, `nombre_pls`, `nombre_psla`, `nombre_brs`, `nombre_lli`, `nombre_ulli`, `date_livraison`, `nombre_logements_livres`, `RT`, `inventaire_sru`, `sig`, `commentaires`, `bailleur_id`, `created_at`, `updated_at`, `pc`, `nombre_plai_agrement`, `nombre_plus_agrement`, `nombre_pls_agrement`, `nombre_psla_agrement`) VALUES ('1','test nom','adresse test','commune test','cadastre test','VEFA','Neuf','2000','promoteur test','PC 1234','2025-04-14','10','25','20','55','22','58','13','12','10','1','1','2024','100','2020','inventaire_sru','SIG non renseigné','Commentaires test','1','2025-04-11 15:05:58','2025-04-11 15:05:58','','20','12','5','15')
-
-INSERT INTO `garantie_emprunts`(`id`, `nom_operation`, `created_at`, `updated_at`, `type_financement`, `numero_delib`, `bureau_conseil`, `date_bureau_conseil`, `montant_total`, `montant_plai_construction`, `montant_plai_foncier`, `montant_pls_construction`, `montant_pls_foncier`, `montant_phb2`, `montant_booster`, `montant_plus_construction`, `montant_plus_foncier`, `date_deliberation`, `nombre_logements_reserves`, `operation_id`) VALUES ('1','operation-id','2025-04-11 15:05:58','2025-04-11 15:05:58','PLUS/PLAI','6','Bureau','2024-02-01','1500000','500000','200000','150000','652358','48523','15000','265000','582000','2025-04-11','8','1')
