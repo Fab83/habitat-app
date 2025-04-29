@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiDataController;
+use App\Http\Controllers\ApiDataControllerDVF;
 use App\Http\Controllers\BailleurController;
 use App\Http\Controllers\OperationController;
 use App\Http\Controllers\ProgrammeController;
 use App\Http\Controllers\GarantieEmpruntController;
+use App\Http\Controllers\InseeController;
 
 
 Route::get('/', function () {
@@ -19,3 +21,6 @@ Route::resource('programmes', ProgrammeController::class);
 
 
 Route::get('/parcelles', [ApiDataController::class, 'show'])->name('parcelles');
+Route::get('/valeurs', [ApiDataControllerDVF::class, 'show'])->name('valeurs');
+
+Route::get('/insee', [InseeController::class, 'show']);

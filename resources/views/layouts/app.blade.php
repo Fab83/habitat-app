@@ -15,9 +15,9 @@
 <body>
 
     {{-- Navbar --}}
-    <nav class="navbar navbar-expand-lg bg-primary-subtle mb-4 sticky-top">
+    <nav class="navbar navbar-expand-lg bg-success-subtle mb-4 sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('/') }}">Habitat</a>
+            <a class="navbar-brand" href="{{ url('/') }}">HOME</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,22 +33,29 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Programmes
+                            Programmes
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{{ url('/programmes') }}">Programmes</a></li>
-                          <li><a class="dropdown-item" href="{{ url('/operations') }}">Operations</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/programmes') }}">Programmes</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/operations') }}">Operations</a></li>
+                            <!-- <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                         </ul>
-                      </li>
-
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Données
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a href="{{ url('/valeurs') }}" class="nav-link">Valeur foncière (DVF)</a></li>
+                            <!-- https://public.opendatasoft.com/explore/dataset/buildingref-france-demande-de-valeurs-foncieres-geolocalisee-millesime/information/ -->
+                            <li class="nav-item"><a href="{{ url('/parcelles') }}" class="nav-link">Parcelles (Majic)</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Logements</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ url('/parcelles') }}" class="nav-link">Parcelles</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -62,7 +69,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-    
+
     @stack('scripts')
 </body>
 <footer class="bg-light text-center text-lg-start mt-4" style="width: 100%;">
@@ -70,4 +77,5 @@
         © {{ date('Y') }} Habitat. Tous droits réservés.
     </div>
 </footer>
+
 </html>
