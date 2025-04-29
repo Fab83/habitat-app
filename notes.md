@@ -7,8 +7,6 @@ Adresse IP : 192.162.69.158
 Utilisateur : root
 Mot de passe : G0n7y6Z6a9u5o2o
 
-http://192.162.69.158:8080/?folder=/var/www/habitat_app_main
-
 mysql password G0n7y6Z6a9u56rTR
 
 http://192.162.69.158:8080
@@ -19,3 +17,9 @@ PANEL
 https://panel.lws.fr/
 LWS-733794
 HvQ3WNC3Nx!uA
+
+ssh root@192.162.69.158
+
+ssh root@192.162.69.158 "
+cd ../var/www/habitat_app_main && git pull origin master && composer install --no-dev && php artisan migrate --force && php artisan cache:clear && php artisan config:clear
+"
