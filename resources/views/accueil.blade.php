@@ -9,7 +9,7 @@
                 <a href="{{ url('/programmes') }}" class="btn btn-primary mb-3 me-3" style="width: 135px; height: 60px; display: flex; justify-content: center; align-items: center;">
                     <span class="text-white">PROGRAMMES</span>
                 </a>
-                <a href="{{ url('/programmes') }}" class="btn btn-outline-primary mb-3 me-3" style="width:135px;display: flex; justify-content: center; align-items: center;">
+                <a href="{{ url('/operations') }}" class="btn btn-outline-primary mb-3 me-3" style="width:135px;display: flex; justify-content: center; align-items: center;">
                     <span>Opérations</span>
                 </a>
             </div>
@@ -24,6 +24,13 @@
                 </a>
                 <a href="#" class="btn btn-outline-success mb-3 me-3" style="width: 135px; display: flex; justify-content: center; align-items: center;">
                     <span>Attributions</span>
+                </a>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <a href="{{ url('/contacts') }}" class="btn btn-danger mb-3 me-3" style="width: 135px; height: 60px; display: flex; justify-content: center; align-items: center;">
+                    <span class="text-white">RENOVATION</span></a>
+                <a href="#" class="btn btn-outline-danger mb-3 me-3" style="width: 135px; display: flex; justify-content: center; align-items: center;">
+                    <span>--Todo--</span>
                 </a>
             </div>
             <div class="d-flex flex-column align-items-center">

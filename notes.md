@@ -20,6 +20,5 @@ HvQ3WNC3Nx!uA
 
 ssh root@192.162.69.158
 
-ssh root@192.162.69.158 "
-cd ../var/www/habitat_app_main && git pull origin master && composer install --no-dev && php artisan migrate --force && php artisan cache:clear && php artisan config:clear
-"
+MAJ
+cd ../var/www/habitat_app_main && git stash && git pull origin master && composer install --no-dev && php artisan migrate --force && php artisan cache:clear && php artisan config:clear
