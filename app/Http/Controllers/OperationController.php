@@ -27,7 +27,7 @@ class OperationController extends Controller
         $bailleurs = Bailleur::all();
         $programmes = Programme::all();
         $programme_id = $request->get('programme_id');
-        
+
         return view('operations.create', compact('bailleurs', 'programmes', 'programme_id'));
     }
 
@@ -135,6 +135,7 @@ class OperationController extends Controller
         $validated = $request->validate([
             'programme_id' => 'required|exists:programmes,id',
             'nom_operation' => 'required|string|max:255',
+            'annulation' => 'nullable|string|max:255',
             'adresse_operation' => 'required|string',
             'commune_operation' => 'required|string|max:255',
             'reference_cadastre' => 'nullable|string|max:255',

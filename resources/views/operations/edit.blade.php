@@ -134,13 +134,13 @@
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="annulation" id="annulation_oui"
                                 value="oui"
-                                {{ old('annulation', $operation->annulation) == 'oui' ? 'checked' : '' }}>
+                                {{ old('annulation', $operation->annulation ?? '') == 'oui' ? 'checked' : '' }}>
                             <label class="form-check-label" for="annulation_oui">Annulée</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="annulation" id="annulation_non"
                                 value="non"
-                                {{ old('annulation', $operation->annulation) == 'non' ? 'checked' : '' }}>
+                                {{ old('annulation', $operation->annulation ?? '') == 'non' ? 'checked' : '' }}>
                             <label class="form-check-label" for="annulation_non">Non annulée</label>
                         </div>
                     </div>

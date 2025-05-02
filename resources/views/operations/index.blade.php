@@ -14,6 +14,7 @@
         <thead>
             <tr>
                 <th>Année prog.</th>
+                <th>Annulée</th>
                 <th>Nom opération</th>
                 <th>Bailleur</th>
                 <th>Commune</th>
@@ -24,13 +25,14 @@
         </thead>
         <tbody>
             @foreach ($operations as $operation)
-            <tr>
+            <tr class="{{ trim(strtolower($operation->annulation)) === 'oui' ? 'bg-blue text-white' : '' }}">
                 <td>{{ $operation->annee_prog }}</td>
+                <td>{{ $operation->annulation }}</td>
                 <td>
                     <a href="{{ route('operations.show', $operation->id) }}" class="text-decoration-underline">
                         {{ $operation->nom_operation }}
                     </a>
-                </td>                
+                </td>
                 <td>{{ $operation->bailleur->nom }}</td>
                 <td>{{ $operation->commune_operation }}</td>
                 <td>{{ $operation->nombre_lls }}</td>
@@ -57,7 +59,7 @@
 @endsection
 @push('scripts')
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#operationsTable').DataTable({
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json'
