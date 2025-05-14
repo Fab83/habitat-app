@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Contacts ECFR</h1>
+    <h1 class="my-3">Contacts ECFR</h1>
 
     <a href="{{ route('contacts.create') }}" class="btn btn-info btn-sm mb-3">Ajouter un contact</a>
 
@@ -31,10 +31,12 @@
                 <td>{{ $contact->renvoi_citemetrie == 0 ? 'Non' : 'Oui' }}</td>
                 <td>
                     <a href="{{ route('contacts.edit', $contact) }}" class="btn btn-warning btn-sm">Modifier</a>
-                    <form action="{{ route('contacts.destroy', $contact) }}" method="POST" style="display:inline-block;">
+                    <form action="{{ route('contacts.destroy', $contact) }}" method="POST"
+                        style="display:inline-block;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Supprimer ce contact ?')">Supprimer</button>
+                        <button type="submit" class="btn btn-danger btn-sm"
+                            onclick="return confirm('Supprimer ce contact ?')">Supprimer</button>
                     </form>
                 </td>
             </tr>
@@ -46,16 +48,16 @@
 
 @push('scripts')
 <script>
-    $(document).ready(function() {
-        $('#contactsTable').DataTable({
-            language: {
-                url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" // Traduction en français
-            },
-            order: [
-                [0, 'asc']
-            ], // Tri par défaut sur la première colonne (Nom)
-            pageLength: 10, // Nombre d'éléments par page
-        });
+$(document).ready(function() {
+    $('#contactsTable').DataTable({
+        language: {
+            url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" // Traduction en français
+        },
+        order: [
+            [0, 'asc']
+        ], // Tri par défaut sur la première colonne (Nom)
+        pageLength: 10, // Nombre d'éléments par page
     });
+});
 </script>
 @endpush

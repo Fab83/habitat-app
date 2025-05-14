@@ -15,13 +15,14 @@
 <body class="d-flex flex-column min-vh-100">
 
     {{-- Navbar --}}
-    <nav class="navbar navbar-expand-lg bg-success-subtle mb-4 sticky-top">
+    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;" data-bs-theme="light">
+        <!-- <nav class="navbar navbar-expand-lg bg-success-subtle mb-4 sticky-top"> -->
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ url('/') }}">HOME</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+            <!--
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -36,8 +37,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('/programmes') }}">Programmes</a></li>
                             <li><a class="dropdown-item" href="{{ url('/operations') }}">Operations</a></li>
-                            <!-- <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -48,7 +48,7 @@
                         <ul class="dropdown-menu">
                             <li class="nav-item"><a href="{{ url('/valeurs') }}" class="nav-link">Valeur foncière
                                     (DVF)</a></li>
-                            <!-- https://public.opendatasoft.com/explore/dataset/buildingref-france-demande-de-valeurs-foncieres-geolocalisee-millesime/information/ -->
+                            https://public.opendatasoft.com/explore/dataset/buildingref-france-demande-de-valeurs-foncieres-geolocalisee-millesime/information/
                             <li class="nav-item"><a href="{{ url('/parcelles') }}" class="nav-link">Parcelles
                                     (Majic)</a></li>
                         </ul>
@@ -59,6 +59,7 @@
 
                 </ul>
             </div>
+-->
         </div>
     </nav>
 

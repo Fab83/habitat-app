@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>Liste des bailleurs</h1>
+    <h1 class="my-3">Liste des bailleurs</h1>
 
     <a href="{{ route('bailleurs.create') }}" class="btn btn-info btn-sm m-3">Ajouter un bailleur</a>
 
