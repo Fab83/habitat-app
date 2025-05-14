@@ -14,11 +14,11 @@ class GarantieEmprunt extends Model
         'operation_id',
         'montant_total',
         'montant_plai_construction',
-        'montant_plai_foncier',   
+        'montant_plai_foncier',
         'montant_pls_construction',
         'montant_pls_foncier',
         'montant_plus_construction',
-        'montant_plus_foncier',    
+        'montant_plus_foncier',
         'montant_phb2',
         'montant_booster',
         'date_deliberation',
@@ -27,6 +27,7 @@ class GarantieEmprunt extends Model
         'numero_delib',
         'bureau_conseil',
         'date_bureau_conseil',
+        'deliberation',
     ];
 
     public function operation()

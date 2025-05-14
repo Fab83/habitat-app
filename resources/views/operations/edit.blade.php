@@ -38,7 +38,7 @@
     </div>
     @endif
 
-    <form action="{{ route('operations.update', $operation->id) }}" method="POST">
+    <form action="{{ route('operations.update', $operation->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -515,6 +515,13 @@
                             <label for="date_bureau_conseil" class="form-label text-nowrap">Date Bureau/Conseil</label>
                             <input type="date" name="garantie_emprunt[date_bureau_conseil]" id="date_bureau_conseil"
                                 class="form-control form-control-sm" value="{{ old('garantie_emprunt.date_bureau_conseil', $operation->garantieEmprunt->date_bureau_conseil ?? '') }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="deliberation" class="form-label">Délibération (fichier)</label>
+                            <input type="file" name="garantie_emprunt[deliberation]" id="deliberation" class="form-control">
+                            @if ($operation->garantieEmprunt->deliberation)
+                            <p>Fichier actuel : <a href="{{ asset('storage/' . $operation->garantieEmprunt->deliberation) }}" target="_blank">Télécharger</a></p>
+                            @endif
                         </div>
                     </div>
                 </div>

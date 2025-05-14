@@ -38,7 +38,7 @@
     </div>
     @endif
 
-    <form action="{{ route('operations.store') }}" method="POST">
+    <form action="{{ route('operations.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         {{-- Onglets --}}
@@ -457,6 +457,10 @@
                             <label for="date_bureau_conseil" class="form-label">Date Bureau/Conseil</label>
                             <input type="date" name="date_bureau_conseil" id="date_bureau_conseil"
                                 class="form-control form-control-sm">
+                        </div>
+                        <div class="mb-3">
+                            <label for="deliberation" class="form-label">Délibération (fichier)</label>
+                            <input type="file" name="deliberation" id="deliberation" class="form-control">
                         </div>
                     </div>
                 </div>

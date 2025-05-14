@@ -9,17 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
         Schema::table('garantie_emprunts', function (Blueprint $table) {
-            $table->string('nom_operation')->nullable()->after('id'); // Ajoutez la colonne après 'id'
+            $table->string('deliberation')->nullable()->after('date_bureau_conseil');
         });
     }
-    
-    public function down()
+
+    public function down(): void
     {
         Schema::table('garantie_emprunts', function (Blueprint $table) {
-            $table->dropColumn('nom_operation');
+            $table->dropColumn('deliberation');
         });
     }
 };

@@ -12,7 +12,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
     {{-- Navbar --}}
     <nav class="navbar navbar-expand-lg bg-success-subtle mb-4 sticky-top">
@@ -29,7 +29,8 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Programmes
                         </a>
                         <ul class="dropdown-menu">
@@ -40,13 +41,16 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Données
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{{ url('/valeurs') }}" class="nav-link">Valeur foncière (DVF)</a></li>
+                            <li class="nav-item"><a href="{{ url('/valeurs') }}" class="nav-link">Valeur foncière
+                                    (DVF)</a></li>
                             <!-- https://public.opendatasoft.com/explore/dataset/buildingref-france-demande-de-valeurs-foncieres-geolocalisee-millesime/information/ -->
-                            <li class="nav-item"><a href="{{ url('/parcelles') }}" class="nav-link">Parcelles (Majic)</a></li>
+                            <li class="nav-item"><a href="{{ url('/parcelles') }}" class="nav-link">Parcelles
+                                    (Majic)</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -57,9 +61,17 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+
+    <div class="container flex-grow-1">
         @yield('content')
     </div>
+
+    <footer class="bg-light text-center text-lg-start mt-auto" style="width: 100%;">
+        <div class="text-center p-3" style="background-color: rgba(160, 196, 220, 0.2);">
+            © {{ date('Y') }} Habitat. Tous droits réservés.
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
     </script>
@@ -69,10 +81,6 @@
 
     @stack('scripts')
 </body>
-<footer class="bg-light text-center text-lg-start mt-4" style="width: 100%;">
-    <div class="text-center p-3" style="background-color: rgba(160, 196, 220, 0.2);">
-        © {{ date('Y') }} Habitat. Tous droits réservés.
-    </div>
-</footer>
+
 
 </html>
