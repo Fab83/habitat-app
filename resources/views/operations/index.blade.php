@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="my-3">Liste des opérations</h1>
+    <h1>Liste des opérations</h1>
 
     <a href="{{ route('operations.create') }}" class="btn btn-info btn-sm m-3">Ajouter une opération</a>
 
@@ -25,7 +25,7 @@
         </thead>
         <tbody>
             @foreach ($operations as $operation)
-            <tr class="{{ trim(strtolower($operation->annulation)) === 'oui' ? 'bg-blue text-white' : '' }}">
+            <tr class="{{ trim(strtolower($operation->annulation)) === 'oui' ? 'table-secondary fst-italic' : '' }}">
                 <td>{{ $operation->annee_prog }}</td>
                 <td>{{ $operation->annulation }}</td>
                 <td>

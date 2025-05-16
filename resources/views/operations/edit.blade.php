@@ -1,24 +1,24 @@
 @extends('layouts.app')
 <style>
-    .osmLinked {
-        display: inline-block;
-        font-weight: 400;
-        min-width: 3rem;
-        color: #fff;
-        text-align: center;
-        vertical-align: middle;
-        user-select: none;
-        background-color: #76b881;
-        border: 1px solid #387442;
-        line-height: 1.5;
-        border-radius: 0.375rem;
-        text-decoration: none;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-            border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        padding: 0.5rem 0.25rem;
-        font-size: 0.75rem;
-        margin-top: 2rem
-    }
+.osmLinked {
+    display: inline-block;
+    font-weight: 400;
+    min-width: 3rem;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: #76b881;
+    border: 1px solid #387442;
+    line-height: 1.5;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+    margin-top: 2rem
+}
 </style>
 @section('title', 'Modifier opération')
 
@@ -51,14 +51,14 @@
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab-logement" data-bs-toggle="tab" data-bs-target="#logement"
-                    type="button" role="tab">
+                <button class="nav-link" id="tab-logement" data-bs-toggle="tab" data-bs-target="#logement" type="button"
+                    role="tab">
                     Logements
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab-garantie" data-bs-toggle="tab" data-bs-target="#garantie"
-                    type="button" role="tab">
+                <button class="nav-link" id="tab-garantie" data-bs-toggle="tab" data-bs-target="#garantie" type="button"
+                    role="tab">
                     Garanties Emprunt
                 </button>
             </li>
@@ -148,8 +148,7 @@
                         {{-- Année prog --}}
                         <div class="col-md-2 mb-3">
                             <label for="année_prog" class="form-label text-nowrap">Année de programmation</label>
-                            <input type="text" name="annee_prog" id="année_prog"
-                                class="form-control form-control-sm"
+                            <input type="text" name="annee_prog" id="année_prog" class="form-control form-control-sm"
                                 value="{{ old('annee_prog', $operation->annee_prog) }}">
                         </div>
                         {{-- Adresse --}}
@@ -169,14 +168,12 @@
                         <div class="col mb-3">
                             <label for="" class="form-label text-nowrap">VEFA/MOD</label><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="vefa_mod" id="vefa"
-                                    value="VEFA"
+                                <input class="form-check-input" type="radio" name="vefa_mod" id="vefa" value="VEFA"
                                     {{ old('vefa_mod', $operation->vefa_mod) == 'VEFA' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="vefa">VEFA</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="vefa_mod" id="mod"
-                                    value="MOD"
+                                <input class="form-check-input" type="radio" name="vefa_mod" id="mod" value="MOD"
                                     {{ old('vefa_mod', $operation->vefa_mod) == 'MOD' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="mod">MOD</label>
                             </div>
@@ -191,8 +188,7 @@
                         <div class="col mb-3">
                             <label for="" class="form-label text-nowrap">Neuf/acquis-amél.</label><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="neuf_aa" id="neuf"
-                                    value="Neuf"
+                                <input class="form-check-input" type="radio" name="neuf_aa" id="neuf" value="Neuf"
                                     {{ old('neuf_aa', $operation->neuf_aa) == 'Neuf' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="neuf">Neuf</label>
                             </div>
@@ -243,13 +239,13 @@
                                 <label class="form-check-label" for="nd">Non renseigné</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sig" id="sigOk"
-                                    value="SIG ok" {{ old('sig', $operation->sig) == 'SIG ok' ? 'checked' : '' }}>
+                                <input class="form-check-input" type="radio" name="sig" id="sigOk" value="SIG ok"
+                                    {{ old('sig', $operation->sig) == 'SIG ok' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="sigOk">SIG OK</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sig" id="pasSIG"
-                                    value="Non SIG" {{ old('sig', $operation->sig) == 'Non SIG' ? 'checked' : '' }}>
+                                <input class="form-check-input" type="radio" name="sig" id="pasSIG" value="Non SIG"
+                                    {{ old('sig', $operation->sig) == 'Non SIG' ? 'checked' : '' }}>
                                 <label class="form-check-label" for="pasSIG">Non SIG</label>
                             </div>
                         </div>
@@ -265,8 +261,7 @@
                         <div class="col-md-2">
                             <label for="dateLivraison" class="form-label text-nowrap">Date livraison</label>
                             <input type="text" class="form-control form-control-sm" id="dateLivraison"
-                                name="date_livraison"
-                                value="{{ old('date_livraison', $operation->date_livraison) }}">
+                                name="date_livraison" value="{{ old('date_livraison', $operation->date_livraison) }}">
                         </div>
                         <div class="col-md-2">
                             <label for="nbLivraison" class="form-label text-nowrap">Nb logements livrés</label>
@@ -284,19 +279,16 @@
                         <div class="col md-2">
                             <label for="cadastre" class="form-label text-nowrap">Réf. cadastrale</label>
                             <input type="text" class="form-control form-control-sm" name="reference_cadastre"
-                                id="cadastre"
-                                value="{{ old('reference_cadastre', $operation->reference_cadastre) }}">
+                                id="cadastre" value="{{ old('reference_cadastre', $operation->reference_cadastre) }}">
                         </div>
                         <div class="col-md-2">
                             <label for="promoteur" class="form-label text-nowrap">Promoteur</label>
-                            <input type="text" name="promoteur" id="promoteur"
-                                class="form-control form-control-sm"
+                            <input type="text" name="promoteur" id="promoteur" class="form-control form-control-sm"
                                 value="{{ old('promoteur', $operation->promoteur) }}">
                         </div>
                         <div class="col-md-2">
                             <label for="numero_pc" class="form-label text-nowrap">N° permis de construire</label>
-                            <input type="text" name="numero_pc" id="numero_pc"
-                                class="form-control form-control-sm"
+                            <input type="text" name="numero_pc" id="numero_pc" class="form-control form-control-sm"
                                 value="{{ old('numero_pc', $operation->numero_pc) }}">
                         </div>
                         <div class="col-md-2">
@@ -313,15 +305,15 @@
                                     fichier</a>
                             </p>
                             @endif
-                            <input type="file" name="pc" id="pc"
-                                class="form-control from-control-sm">
+                            <input type="file" name="pc" id="pc" class="form-control from-control-sm">
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <label for="commentaires" class="form-label text-nowrap">Commentaires</label>
-                        <textarea class="form-control form-control-sm" placeholder="Commentaires divers sur opération" id="commentaires"
+                        <textarea class="form-control form-control-sm" placeholder="Commentaires divers sur opération"
+                            id="commentaires"
                             name="commentaires">{{ old('commentaires', $operation->commentaires) }}</textarea>
                     </div>
                 </div>
@@ -364,8 +356,7 @@
                         </div>
                         <div class="col-md-2 mb-3">
                             <label for="nombre_pls" class="form-label text-nowrap">Nb PLS</label>
-                            <input type="number" name="nombre_pls" id="nombre_pls"
-                                class="form-control form-control-sm"
+                            <input type="number" name="nombre_pls" id="nombre_pls" class="form-control form-control-sm"
                                 value="{{ old('nombre_pls', $operation->nombre_pls) }}">
                         </div>
                     </div>
@@ -384,16 +375,14 @@
                         </div>
                         <div class="col-md-2 mb-3">
                             <label for="nombre_lls" class="form-label fw-bold text-danger">Total LLS</label>
-                            <input type="number" name="nombre_lls" id="nombre_lls"
-                                class="form-control form-control-sm"
+                            <input type="number" name="nombre_lls" id="nombre_lls" class="form-control form-control-sm"
                                 value="{{ old('nombre_lls', $operation->nombre_lls) }}">
                         </div>
                     </div>
                     <div class="row g-2">
                         <div class="col-2 mb-3">
                             <label for="nombre_lli" class="form-label text-nowrap">Nb LLI</label>
-                            <input type="number" name="nombre_lli" id="nombre_lli"
-                                class="form-control form-control-sm"
+                            <input type="number" name="nombre_lli" id="nombre_lli" class="form-control form-control-sm"
                                 value="{{ old('nombre_lli', $operation->nombre_lli) }}">
                         </div>
                         <div class="col-2 mb-3">
@@ -421,8 +410,7 @@
                         </div>
                         <div class="col-md-2 mb-3">
                             <label for="nombre_brs" class="form-label text-nowrap">Nb BRS</label>
-                            <input type="number" name="nombre_brs" id="nombre_brs"
-                                class="form-control form-control-sm"
+                            <input type="number" name="nombre_brs" id="nombre_brs" class="form-control form-control-sm"
                                 value="{{ old('nombre_brs', $operation->nombre_brs) }}">
                         </div>
                     </div>
@@ -436,39 +424,50 @@
                     <div class="row g-2">
                         <div class="col mb-3">
                             <label for="montant_total" class="form-label text-nowrap">Montant total</label>
-                            <input type="number" name="garantie_emprunt[montant_total]" id="montant_total" class="form-control form-control-sm" value="{{ old('garantie_emprunt.montant_total', $operation->garantieEmprunt->montant_total ?? '') }}">
+                            <input type="number" name="garantie_emprunt[montant_total]" id="montant_total"
+                                class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.montant_total', $operation->garantieEmprunt->montant_total ?? '') }}">
                         </div>
                         <div class="col mb-3">
-                            <label for="montant_plai_construction" class="form-label text-nowrap">Montant PLAI Construction</label>
+                            <label for="montant_plai_construction" class="form-label text-nowrap">Montant PLAI
+                                Construction</label>
                             <input type="number" name="garantie_emprunt[montant_plai_construction]"
                                 id="montant_plai_construction" class="form-control form-control-sm"
                                 value="{{ old('garantie_emprunt.montant_plai_construction', $operation->garantieEmprunt->montant_plai_construction ?? '') }}">
                         </div>
                         <div class="col mb-3">
-                            <label for="montant_plai_foncier" class="form-label text-nowrap">Montant PLAI Foncier</label>
+                            <label for="montant_plai_foncier" class="form-label text-nowrap">Montant PLAI
+                                Foncier</label>
                             <input type="number" name="garantie_emprunt[montant_plai_foncier]" id="montant_plai_foncier"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.montant_plai_foncier', $operation->garantieEmprunt->montant_plai_foncier ?? '') }}">
+                                class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.montant_plai_foncier', $operation->garantieEmprunt->montant_plai_foncier ?? '') }}">
                         </div>
                         <div class="col mb-3">
-                            <label for="montant_pls_construction" class="form-label text-nowrap">Montant PLS Construction</label>
-                            <input type="number" name="garantie_emprunt[montant_pls_construction]" id="montant_pls_construction"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.montant_pls_construction', $operation->garantieEmprunt->montant_pls_construction ?? '') }}">
+                            <label for="montant_pls_construction" class="form-label text-nowrap">Montant PLS
+                                Construction</label>
+                            <input type="number" name="garantie_emprunt[montant_pls_construction]"
+                                id="montant_pls_construction" class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.montant_pls_construction', $operation->garantieEmprunt->montant_pls_construction ?? '') }}">
                         </div>
                         <div class="col mb-3">
                             <label for="montant_pls_foncier" class="form-label text-nowrap">Montant PLS Foncier</label>
                             <input type="number" name="garantie_emprunt[montant_pls_foncier]" id="montant_pls_foncier"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.montant_pls_foncier', $operation->garantieEmprunt->montant_pls_foncier ?? '') }}">
+                                class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.montant_pls_foncier', $operation->garantieEmprunt->montant_pls_foncier ?? '') }}">
                         </div>
                         <div class="col mb-3">
                             <label for="montant_plus_construction" class="form-label text-nowrap">Montant PLUS
                                 Construction</label>
-                            <input type="number" name="garantie_emprunt[montant_plus_construction]" id="montant_plus_construction"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.montant_plus_construction', $operation->garantieEmprunt->montant_plus_construction ?? '') }}">
+                            <input type="number" name="garantie_emprunt[montant_plus_construction]"
+                                id="montant_plus_construction" class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.montant_plus_construction', $operation->garantieEmprunt->montant_plus_construction ?? '') }}">
                         </div>
                         <div class="col mb-3">
-                            <label for="montant_plus_foncier" class="form-label text-nowrap">Montant PLUS Foncier</label>
+                            <label for="montant_plus_foncier" class="form-label text-nowrap">Montant PLUS
+                                Foncier</label>
                             <input type="number" name="garantie_emprunt[montant_plus_foncier]" id="montant_plus_foncier"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.montant_plus_foncier', $operation->garantieEmprunt->montant_plus_foncier ?? '') }}">
+                                class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.montant_plus_foncier', $operation->garantieEmprunt->montant_plus_foncier ?? '') }}">
                         </div>
                         <div class="col mb-3">
                             <label for="montant_phb2" class="form-label text-nowrap">Montant PHB2</label>
@@ -478,49 +477,64 @@
                         <div class="col mb-3">
                             <label for="montant_booster" class="form-label text-nowrap">Montant Booster</label>
                             <input type="number" name="garantie_emprunt[montant_booster]" id="montant_booster"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.montant_booster', $operation->garantieEmprunt->montant_booster ?? '') }}">
+                                class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.montant_booster', $operation->garantieEmprunt->montant_booster ?? '') }}">
                         </div>
                         <div class="row g-2">
                             <div class="col mb-3">
                                 <label for="date_deliberation" class="form-label text-nowrap">Date Délibération</label>
                                 <input type="date" name="garantie_emprunt[date_deliberation]" id="date_deliberation"
-                                    class="form-control form-control-sm" value="{{ old('garantie_emprunt.date_deliberation', $operation->garantieEmprunt->date_deliberation ?? '') }}">
+                                    class="form-control form-control-sm"
+                                    value="{{ old('garantie_emprunt.date_deliberation', $operation->garantieEmprunt->date_deliberation ?? '') }}">
                             </div>
                         </div>
                         <div class="col mb-3">
                             <label for="nombre_logements_reserves" class="form-label text-nowrap">Nombre de logements
                                 réservés</label>
-                            <input type="number" name="garantie_emprunt[nombre_logements_reserves]" id="nombre_logements_reserves"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.nombre_logements_reserves', $operation->garantieEmprunt->nombre_logements_reserves ?? '') }}">
+                            <input type="number" name="garantie_emprunt[nombre_logements_reserves]"
+                                id="nombre_logements_reserves" class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.nombre_logements_reserves', $operation->garantieEmprunt->nombre_logements_reserves ?? '') }}">
                         </div>
                         <div class="col mb-3">
                             <label for="type_financement" class="form-label text-nowrap">Type de financement</label>
                             <input type="text" name="garantie_emprunt[type_financement]" id="type_financement"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.type_financement', $operation->garantieEmprunt->type_financement ?? '') }}">
+                                class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.type_financement', $operation->garantieEmprunt->type_financement ?? '') }}">
                         </div>
                         <div class="col mb-3">
                             <label for="numero_delib" class="form-label text-nowrap">Numéro Délibération</label>
                             <input type="text" name="garantie_emprunt[numero_delib]" id="numero_delib"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.numero_delib', $operation->garantieEmprunt->numero_delib ?? '') }}">
+                                class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.numero_delib', $operation->garantieEmprunt->numero_delib ?? '') }}">
                         </div>
                         <div class="col mb-3">
                             <label for="bureau_conseil" class="form-label text-nowrap">Bureau Conseil</label>
                             <select name="bureau_conseil" id="bureau_conseil" class="form-select form-select-sm">
-                                <option value="Bureau" {{ old('bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Bureau' ? 'selected' : '' }}>Bureau</option>
-                                <option value="Conseil" {{ old('bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Conseil' ? 'selected' : '' }}>Conseil</option>
-                                <option value="Non renseigné" {{ old('bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Non renseigné' ? 'selected' : '' }}>Non renseigné</option>
+                                <option value="Bureau"
+                                    {{ old('bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Bureau' ? 'selected' : '' }}>
+                                    Bureau</option>
+                                <option value="Conseil"
+                                    {{ old('bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Conseil' ? 'selected' : '' }}>
+                                    Conseil</option>
+                                <option value="Non renseigné"
+                                    {{ old('bureau_conseil', $operation->garantieEmprunt->bureau_conseil ?? '') == 'Non renseigné' ? 'selected' : '' }}>
+                                    Non renseigné</option>
                             </select>
                         </div>
                         <div class="col mb-3">
                             <label for="date_bureau_conseil" class="form-label text-nowrap">Date Bureau/Conseil</label>
                             <input type="date" name="garantie_emprunt[date_bureau_conseil]" id="date_bureau_conseil"
-                                class="form-control form-control-sm" value="{{ old('garantie_emprunt.date_bureau_conseil', $operation->garantieEmprunt->date_bureau_conseil ?? '') }}">
+                                class="form-control form-control-sm"
+                                value="{{ old('garantie_emprunt.date_bureau_conseil', $operation->garantieEmprunt->date_bureau_conseil ?? '') }}">
                         </div>
                         <div class="mb-3">
                             <label for="deliberation" class="form-label">Délibération (fichier)</label>
-                            <input type="file" name="garantie_emprunt[deliberation]" id="deliberation" class="form-control">
+                            <input type="file" name="garantie_emprunt[deliberation]" id="deliberation"
+                                class="form-control">
                             @if ($operation->garantieEmprunt->deliberation)
-                            <p>Fichier actuel : <a href="{{ asset('storage/' . $operation->garantieEmprunt->deliberation) }}" target="_blank">Télécharger</a></p>
+                            <p>Fichier actuel : <a
+                                    href="{{ asset('storage/' . $operation->garantieEmprunt->deliberation) }}"
+                                    target="_blank">Télécharger</a></p>
                             @endif
                         </div>
                     </div>
@@ -534,54 +548,54 @@
 </div>
 @endsection
 <script>
-    // On attend que le DOM soit entièrement chargé
-    document.addEventListener('DOMContentLoaded', function() {
-        const addressInput = document.getElementById('adresse');
-        const communeSelect = document.getElementById('commune');
-        const osmLink = document.getElementById('osmLink');
+// On attend que le DOM soit entièrement chargé
+document.addEventListener('DOMContentLoaded', function() {
+    const addressInput = document.getElementById('adresse');
+    const communeSelect = document.getElementById('commune');
+    const osmLink = document.getElementById('osmLink');
 
-        // Met à jour href et l’état visuel du lien
-        function updateLink() {
-            const adresse = addressInput.value.trim();
-            const commune = communeSelect.value;
-            if (!adresse) {
-                osmLink.href = '#';
-                osmLink.classList.add('disabled');
-            } else {
-                const query = encodeURIComponent(`${adresse} ${commune}`);
-                // osmLink.href = `https://www.openstreetmap.org/search?query=${query}`;
-                osmLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
+    // Met à jour href et l’état visuel du lien
+    function updateLink() {
+        const adresse = addressInput.value.trim();
+        const commune = communeSelect.value;
+        if (!adresse) {
+            osmLink.href = '#';
+            osmLink.classList.add('disabled');
+        } else {
+            const query = encodeURIComponent(`${adresse} ${commune}`);
+            // osmLink.href = `https://www.openstreetmap.org/search?query=${query}`;
+            osmLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
 
-                osmLink.classList.remove('disabled');
-            }
+            osmLink.classList.remove('disabled');
         }
+    }
 
-        // Sur chaque saisie ou changement, on régénère l’URL
-        addressInput.addEventListener('input', updateLink);
-        communeSelect.addEventListener('change', updateLink);
+    // Sur chaque saisie ou changement, on régénère l’URL
+    addressInput.addEventListener('input', updateLink);
+    communeSelect.addEventListener('change', updateLink);
 
-        // Optionnel : message d’alerte si on clique sans adresse
-        osmLink.addEventListener('click', function(e) {
-            if (!addressInput.value.trim()) {
-                e.preventDefault();
-                alert('Veuillez saisir une adresse avant de voir la carte.');
-            }
-        });
-
-        // Initialisation au chargement de la page
-        updateLink();
+    // Optionnel : message d’alerte si on clique sans adresse
+    osmLink.addEventListener('click', function(e) {
+        if (!addressInput.value.trim()) {
+            e.preventDefault();
+            alert('Veuillez saisir une adresse avant de voir la carte.');
+        }
     });
+
+    // Initialisation au chargement de la page
+    updateLink();
+});
 </script>
 <script>
-    let popup;
+let popup;
 
-    function openBailleurPopup(url) {
-        popup = window.open(url, 'popup', 'width=600,height=600');
-        let timer = setInterval(function() {
-            if (popup.closed) {
-                clearInterval(timer);
-                location.reload(); // recharge la page quand la popup est fermée
-            }
-        }, 500);
-    }
+function openBailleurPopup(url) {
+    popup = window.open(url, 'popup', 'width=600,height=600');
+    let timer = setInterval(function() {
+        if (popup.closed) {
+            clearInterval(timer);
+            location.reload(); // recharge la page quand la popup est fermée
+        }
+    }, 500);
+}
 </script>

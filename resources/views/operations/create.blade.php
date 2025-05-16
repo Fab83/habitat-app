@@ -1,24 +1,24 @@
 @extends('layouts.app')
 <style>
-    .osmLinked {
-        display: inline-block;
-        font-weight: 400;
-        min-width: 3rem;
-        color: #fff;
-        text-align: center;
-        vertical-align: middle;
-        user-select: none;
-        background-color: #76b881;
-        border: 1px solid #387442;
-        line-height: 1.5;
-        border-radius: 0.375rem;
-        text-decoration: none;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-            border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        padding: 0.5rem 0.25rem;
-        font-size: 0.75rem;
-        margin-top: 2rem
-    }
+.osmLinked {
+    display: inline-block;
+    font-weight: 400;
+    min-width: 3rem;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: #76b881;
+    border: 1px solid #387442;
+    line-height: 1.5;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.75rem;
+    margin-top: 2rem
+}
 </style>
 @section('title', 'Créer une opération')
 
@@ -50,14 +50,14 @@
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab-logement" data-bs-toggle="tab" data-bs-target="#logement"
-                    type="button" role="tab">
+                <button class="nav-link" id="tab-logement" data-bs-toggle="tab" data-bs-target="#logement" type="button"
+                    role="tab">
                     Logements
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab-garantie" data-bs-toggle="tab" data-bs-target="#garantie"
-                    type="button" role="tab">
+                <button class="nav-link" id="tab-garantie" data-bs-toggle="tab" data-bs-target="#garantie" type="button"
+                    role="tab">
                     Garanties Emprunt
                 </button>
             </li>
@@ -118,11 +118,13 @@
                     </div>
                     <div class="mb-3">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="annulation" id="annulation_oui" value="oui">
+                            <input class="form-check-input" type="radio" name="annulation" id="annulation_oui"
+                                value="oui">
                             <label class="form-check-label" for="annulation_oui">Annulée</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="annulation" id="annulation_non" value="non" checked>
+                            <input class="form-check-input" type="radio" name="annulation" id="annulation_non"
+                                value="non" checked>
                             <label class="form-check-label" for="annulation_non">Non annulée</label>
                         </div>
                     </div>
@@ -149,13 +151,11 @@
                         <div class="col mb-3">
                             <label for="" class="form-label">VEFA/MOD</label><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="vefa_mod" id="vefa"
-                                    value="VEFA">
+                                <input class="form-check-input" type="radio" name="vefa_mod" id="vefa" value="VEFA">
                                 <label class="form-check-label" for="vefa">VEFA</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="vefa_mod" id="mod"
-                                    value="MOD">
+                                <input class="form-check-input" type="radio" name="vefa_mod" id="mod" value="MOD">
                                 <label class="form-check-label" for="mod">MOD</label>
                             </div>
                             <div class="form-check">
@@ -168,8 +168,7 @@
                         <div class="col mb-3">
                             <label for="" class="form-label">Neuf/acquis-amél.</label><br>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="neuf_aa" id="neuf"
-                                    value="Neuf">
+                                <input class="form-check-input" type="radio" name="neuf_aa" id="neuf" value="Neuf">
                                 <label class="form-check-label" for="neuf">Neuf</label>
                             </div>
                             <div class="form-check">
@@ -213,13 +212,11 @@
                                 <label class="form-check-label" for="nd">Non renseigné</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sig" id="sigOk"
-                                    value="SIG ok">
+                                <input class="form-check-input" type="radio" name="sig" id="sigOk" value="SIG ok">
                                 <label class="form-check-label" for="sigOk">SIG OK</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="sig" id="pasSIG"
-                                    value="Non SIG">
+                                <input class="form-check-input" type="radio" name="sig" id="pasSIG" value="Non SIG">
                                 <label class="form-check-label" for="pasSIG">Non SIG</label>
                             </div>
                         </div>
@@ -255,13 +252,13 @@
                         </div>
                         <div class="col-md-2">
                             <label for="promoteur" class="form-label">Promoteur</label>
-                            <input type="text" name="promoteur" id="promoteur"
-                                class="form-control form-control-sm" value="{{ old('promoteur') }}">
+                            <input type="text" name="promoteur" id="promoteur" class="form-control form-control-sm"
+                                value="{{ old('promoteur') }}">
                         </div>
                         <div class="col-md-2">
                             <label for="numero_pc" class="form-label">N° permis de construire</label>
-                            <input type="text" name="numero_pc" id="numero_pc"
-                                class="form-control form-control-sm" value="{{ old('numero_pc') }}">
+                            <input type="text" name="numero_pc" id="numero_pc" class="form-control form-control-sm"
+                                value="{{ old('numero_pc') }}">
                         </div>
                         <div class="col-md-2">
                             <label for="date_pc" class="form-label">Date PC</label>
@@ -278,8 +275,8 @@
                 <div class="row">
                     <div class="col">
                         <label for="commentaires" class="form-label">Commentaires</label>
-                        <textarea class="form-control form-control-sm" placeholder="Commentaires divers sur opération" id="commentaires"
-                            name="commentaires"></textarea>
+                        <textarea class="form-control form-control-sm" placeholder="Commentaires divers sur opération"
+                            id="commentaires" name="commentaires"></textarea>
                     </div>
                 </div>
             </div>
@@ -316,8 +313,7 @@
                         </div>
                         <div class="col-md-2 mb-3">
                             <label for="nombre_pls" class="form-label">Nb PLS</label>
-                            <input type="number" name="nombre_pls" id="nombre_pls"
-                                class="form-control form-control-sm">
+                            <input type="number" name="nombre_pls" id="nombre_pls" class="form-control form-control-sm">
                         </div>
                     </div>
                     <div class="row g-2">
@@ -333,15 +329,13 @@
                         </div>
                         <div class="col-md-2 mb-3">
                             <label for="nombre_lls" class="form-label fw-bold text-danger">Total LLS</label>
-                            <input type="number" name="nombre_lls" id="nombre_lls"
-                                class="form-control form-control-sm">
+                            <input type="number" name="nombre_lls" id="nombre_lls" class="form-control form-control-sm">
                         </div>
                     </div>
                     <div class="row g-2">
                         <div class="col-2 mb-3">
                             <label for="nombre_lli" class="form-label">Nb LLI</label>
-                            <input type="number" name="nombre_lli" id="nombre_lli"
-                                class="form-control form-control-sm">
+                            <input type="number" name="nombre_lli" id="nombre_lli" class="form-control form-control-sm">
                         </div>
                         <div class="col-2 mb-3">
                             <label for="nombre_ulli" class="form-label">Nb ULLI</label>
@@ -365,8 +359,7 @@
                         </div>
                         <div class="col-md-2 mb-3">
                             <label for="nombre_brs" class="form-label">Nb BRS</label>
-                            <input type="number" name="nombre_brs" id="nombre_brs"
-                                class="form-control form-control-sm">
+                            <input type="number" name="nombre_brs" id="nombre_brs" class="form-control form-control-sm">
                         </div>
                     </div>
                 </div>
@@ -377,150 +370,162 @@
                 <div class="container roundForm green">
                     <h1 class="display-6">Garanties Emprunt</h1>
                     <div class="row g-2">
-                        <div class="col-md-6 mb-3">
-                            <label for="montant_total" class="form-label">Montant total</label>
-                            <input type="number" name="garantie_emprunt[montant_total]" id="montant_total"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-6 mb-3">
+                        <p class="fs-3">PLAI</p>
+                        <div class="col-md-3 mb-3">
                             <label for="montant_plai_construction" class="form-label">Montant PLAI
                                 Construction</label>
-                            <input type="number" name="garantie_emprunt[montant_plai_construction]"
-                                id="montant_plai_construction" class="form-control form-control-sm">
+                            <input type="text" name="garantie_emprunt[montant_plai_construction]"
+                                id="montant_plai_construction" class="form-control form-control-sm"
+                                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');">
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label for="montant_plai_foncier" class="form-label">Montant PLAI Foncier</label>
-                            <input type="number" name="montant_plai_foncier" id="montant_plai_foncier"
-                                class="form-control form-control-sm">
+                            <input type="text" name="montant_plai_foncier" id="montant_plai_foncier"
+                                class="form-control form-control-sm"
+                                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');">
                         </div>
-                        <div class="col-md-6 mb-3">
+                    </div>
+                    <div class="row g-2">
+                        <p class="fs-3">PLUS</p>
+                        <div class="col-md-3 mb-3">
                             <label for="montant_pls_construction" class="form-label">Montant PLS Construction</label>
-                            <input type="number" name="montant_pls_construction" id="montant_pls_construction"
-                                class="form-control form-control-sm">
+                            <input type="text" name="montant_pls_construction" id="montant_pls_construction"
+                                class="form-control form-control-sm"
+                                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');">
                         </div>
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-3 mb-3">
                             <label for="montant_pls_foncier" class="form-label">Montant PLS Foncier</label>
-                            <input type="number" name="montant_pls_foncier" id="montant_pls_foncier"
-                                class="form-control form-control-sm">
+                            <input type="text" name="montant_pls_foncier" id="montant_pls_foncier"
+                                class="form-control form-control-sm"
+                                oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');">
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="montant_plus_construction" class="form-label">Montant PLUS
-                                Construction</label>
-                            <input type="number" name="montant_plus_construction" id="montant_plus_construction"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="montant_plus_foncier" class="form-label">Montant PLUS Foncier</label>
-                            <input type="number" name="montant_plus_foncier" id="montant_plus_foncier"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="montant_phb2" class="form-label">Montant PHB2</label>
-                            <input type="number" name="montant_phb2" id="montant_phb2"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="montant_booster" class="form-label">Montant Booster</label>
-                            <input type="number" name="montant_booster" id="montant_booster"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="date_deliberation" class="form-label">Date Délibération</label>
-                            <input type="date" name="date_deliberation" id="date_deliberation"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="nombre_logements_reserves" class="form-label">Nombre de logements
-                                réservés</label>
-                            <input type="number" name="nombre_logements_reserves" id="nombre_logements_reserves"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="type_financement" class="form-label">Type de financement</label>
-                            <input type="text" name="type_financement" id="type_financement"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="numero_delib" class="form-label">Numéro Délibération</label>
-                            <input type="text" name="numero_delib" id="numero_delib"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="bureau_conseil" class="form-label">Bureau Conseil</label>
-                            <select name="bureau_conseil" id="bureau_conseil" class="form-select form-select-sm">
-                                <option value="Bureau">Bureau</option>
-                                <option value="Conseil">Conseil</option>
-                                <option value="Non renseigné" selected>Non renseigné</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="date_bureau_conseil" class="form-label">Date Bureau/Conseil</label>
-                            <input type="date" name="date_bureau_conseil" id="date_bureau_conseil"
-                                class="form-control form-control-sm">
-                        </div>
-                        <div class="mb-3">
-                            <label for="deliberation" class="form-label">Délibération (fichier)</label>
-                            <input type="file" name="deliberation" id="deliberation" class="form-control">
-                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="montant_plus_construction" class="form-label">Montant PLUS
+                            Construction</label>
+                        <input type="text" name="montant_plus_construction" id="montant_plus_construction"
+                            class="form-control form-control-sm"
+                            oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="montant_plus_foncier" class="form-label">Montant PLUS Foncier</label>
+                        <input type="text" name="montant_plus_foncier" id="montant_plus_foncier"
+                            class="form-control form-control-sm"
+                            oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="montant_phb2" class="form-label">Montant PHB2</label>
+                        <input type="text" name="montant_phb2" id="montant_phb2" class="form-control form-control-sm"
+                            oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="montant_booster" class="form-label">Montant Booster</label>
+                        <input type="text" name="montant_booster" id="montant_booster"
+                            class="form-control form-control-sm"
+                            oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="montant_total" class="form-label">Montant total</label>
+                        <input type="text" name="garantie_emprunt[montant_total]" id="montant_total"
+                            class="form-control form-control-sm"
+                            oninput="this.value = this.value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ' ');">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="date_deliberation" class="form-label">Date Délibération</label>
+                        <input type="date" name="date_deliberation" id="date_deliberation"
+                            class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="nombre_logements_reserves" class="form-label">Nombre de logements
+                            réservés</label>
+                        <input type="number" name="nombre_logements_reserves" id="nombre_logements_reserves"
+                            class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="type_financement" class="form-label">Type de financement</label>
+                        <input type="text" name="type_financement" id="type_financement"
+                            class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="numero_delib" class="form-label">Numéro Délibération</label>
+                        <input type="text" name="numero_delib" id="numero_delib" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="bureau_conseil" class="form-label">Bureau Conseil</label>
+                        <select name="bureau_conseil" id="bureau_conseil" class="form-select form-select-sm">
+                            <option value="Bureau">Bureau</option>
+                            <option value="Conseil">Conseil</option>
+                            <option value="Non renseigné" selected>Non renseigné</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="date_bureau_conseil" class="form-label">Date Bureau/Conseil</label>
+                        <input type="date" name="date_bureau_conseil" id="date_bureau_conseil"
+                            class="form-control form-control-sm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="deliberation" class="form-label">Délibération (fichier)</label>
+                        <input type="file" name="deliberation" id="deliberation" class="form-control">
                     </div>
                 </div>
             </div>
         </div>
+</div>
 
-        <button type="submit" class="btn btn-primary my-3">Enregistrer</button>
-        <a href="{{ route('operations.index') }}" class="btn btn-secondary my-3">Annuler</a>
-    </form>
+<button type="submit" class="btn btn-primary my-3">Enregistrer</button>
+<a href="{{ route('operations.index') }}" class="btn btn-secondary my-3">Annuler</a>
+</form>
 </div>
 @endsection
 <script>
-    // On attend que le DOM soit entièrement chargé
-    document.addEventListener('DOMContentLoaded', function() {
-        const addressInput = document.getElementById('adresse');
-        const communeSelect = document.getElementById('commune');
-        const osmLink = document.getElementById('osmLink');
+// On attend que le DOM soit entièrement chargé
+document.addEventListener('DOMContentLoaded', function() {
+    const addressInput = document.getElementById('adresse');
+    const communeSelect = document.getElementById('commune');
+    const osmLink = document.getElementById('osmLink');
 
-        // Met à jour href et l’état visuel du lien
-        function updateLink() {
-            const adresse = addressInput.value.trim();
-            const commune = communeSelect.value;
-            if (!adresse) {
-                osmLink.href = '#';
-                osmLink.classList.add('disabled');
-            } else {
-                const query = encodeURIComponent(`${adresse} ${commune}`);
-                // osmLink.href = `https://www.openstreetmap.org/search?query=${query}`;
-                osmLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
+    // Met à jour href et l’état visuel du lien
+    function updateLink() {
+        const adresse = addressInput.value.trim();
+        const commune = communeSelect.value;
+        if (!adresse) {
+            osmLink.href = '#';
+            osmLink.classList.add('disabled');
+        } else {
+            const query = encodeURIComponent(`${adresse} ${commune}`);
+            // osmLink.href = `https://www.openstreetmap.org/search?query=${query}`;
+            osmLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
 
-                osmLink.classList.remove('disabled');
-            }
+            osmLink.classList.remove('disabled');
         }
+    }
 
-        // Sur chaque saisie ou changement, on régénère l’URL
-        addressInput.addEventListener('input', updateLink);
-        communeSelect.addEventListener('change', updateLink);
+    // Sur chaque saisie ou changement, on régénère l’URL
+    addressInput.addEventListener('input', updateLink);
+    communeSelect.addEventListener('change', updateLink);
 
-        // Optionnel : message d’alerte si on clique sans adresse
-        osmLink.addEventListener('click', function(e) {
-            if (!addressInput.value.trim()) {
-                e.preventDefault();
-                alert('Veuillez saisir une adresse avant de voir la carte.');
-            }
-        });
-
-        // Initialisation au chargement de la page
-        updateLink();
+    // Optionnel : message d’alerte si on clique sans adresse
+    osmLink.addEventListener('click', function(e) {
+        if (!addressInput.value.trim()) {
+            e.preventDefault();
+            alert('Veuillez saisir une adresse avant de voir la carte.');
+        }
     });
+
+    // Initialisation au chargement de la page
+    updateLink();
+});
 </script>
 <script>
-    let popup;
+let popup;
 
-    function openBailleurPopup(url) {
-        popup = window.open(url, 'popup', 'width=600,height=600');
-        let timer = setInterval(function() {
-            if (popup.closed) {
-                clearInterval(timer);
-                location.reload(); // recharge la page quand la popup est fermée
-            }
-        }, 500);
-    }
+function openBailleurPopup(url) {
+    popup = window.open(url, 'popup', 'width=600,height=600');
+    let timer = setInterval(function() {
+        if (popup.closed) {
+            clearInterval(timer);
+            location.reload(); // recharge la page quand la popup est fermée
+        }
+    }, 500);
+}
 </script>

@@ -17,6 +17,7 @@
                 <th>Date contact</th>
                 <th>Commune</th>
                 <th>Demande</th>
+                <th>Réponse</th>
                 <th>Renvoi Citémétrie</th>
                 <th>Actions</th>
             </tr>
@@ -27,7 +28,8 @@
                 <td><a href="{{ route('contacts.show', $contact) }}">{{ $contact->nom_contact }}</a></td>
                 <td>{{ $contact->date_contact }}</td>
                 <td>{{ $contact->commune_contact }}</td>
-                <td>{{ $contact->demande }}</td>
+                <td>{{ Str::limit($contact->demande, 100) }}</td>
+                <td>{{ Str::limit($contact->reponse, 100) }}</td>
                 <td>{{ $contact->renvoi_citemetrie == 0 ? 'Non' : 'Oui' }}</td>
                 <td>
                     <a href="{{ route('contacts.edit', $contact) }}" class="btn btn-warning btn-sm">Modifier</a>
