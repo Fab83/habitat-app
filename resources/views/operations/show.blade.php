@@ -1,9 +1,9 @@
 @extends('layouts.app')
 <style>
-    body {
-        line-height: 1;
-        ;
-    }
+body {
+    line-height: 1;
+    ;
+}
 </style>
 @section('content')
 <div class="container">
@@ -13,35 +13,35 @@
         <tr>
             <td>Année programmation</td>
             <td>{{ $operation->annee_prog }}</td>
-        <tr>
+
             <td>Bailleur</td>
             <td>{{ $operation->bailleur->nom }}</td>
-        </tr>
-        <tr>
-            <td>Commune</td>
-            <td id="commune">{{ $operation->commune_operation }}</td>
         </tr>
         <tr>
             <td>Adresse</td>
             <td id="adresse" colspan="3">{{ $operation->adresse_operation }}
                 <a href="#" id="osmLink" target="_blank" class="disabled osmLinked">Carte</a>
             </td>
+
         </tr>
-        @if ($operation->reference_cadastre)
         <tr>
+            <td>Commune</td>
+            <td id="commune">{{ $operation->commune_operation }}</td>
+
+
+            @if ($operation->reference_cadastre)
+
             <td>Cadastre</td>
             <td>{{ $operation->reference_cadastre }}</td>
-        </tr>
-        @endif
-        @if ($operation->vefa_mod)
+            @endif @if ($operation->vefa_mod)
         <tr>
             <td>VEFA/MOD</td>
             <td>{{ $operation->vefa_mod }}</td>
-        </tr>
-        @endif
-        @if ($operation->neuf_aa)
-        <td>Neuf / AA</td>
-        <td>{{ $operation->neuf_aa }}</td>
+
+            @endif
+            @if ($operation->neuf_aa)
+            <td>Neuf / AA</td>
+            <td>{{ $operation->neuf_aa }}</td>
         </tr>
         @endif
         @if ($operation->promoteur)
@@ -75,15 +75,14 @@
             </td>
         </tr>
 
-        @if ($operation->nombre_logements)
         <tr>
+            @if ($operation->nombre_logements)
             <td>Nombre logements</td>
             <td>{{ $operation->nombre_logements }}</td>
-        </tr>
-        @endif
 
-        @if ($operation->nombre_lls)
-        <tr>
+            @endif
+
+            @if ($operation->nombre_lls)
             <td>Nombre LLS</td>
             <td>{{ $operation->nombre_lls }}</td>
         </tr>
@@ -225,73 +224,73 @@
                 <h4 class="text-danger">Garanties d'emprunt</h4>
             </td>
         </tr>
-        @if ($operation->garantieEmprunt->montant_total)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->montant_total)
         <tr>
             <td>Montant GE</td>
             <td>{{ number_format($operation->garantieEmprunt->montant_total, 0, ',', ' ') }} €</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->nombre_logements_reserves)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->nombre_logements_reserves)
         <tr>
             <td>Logements réservés (GE)</td>
             <td>{{ $operation->garantieEmprunt->nombre_logements_reserves }}</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->type_financement)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->type_financement)
         <tr>
             <td>Financement</td>
             <td>{{ $operation->garantieEmprunt->type_financement }}</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->bureau_conseil)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->bureau_conseil)
         <tr>
             <td>Bureau/conseil</td>
             <td>{{ $operation->garantieEmprunt->bureau_conseil }}</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->numero_delib)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->numero_delib)
         <tr>
             <td>Délibération</td>
             <td>N° {{ $operation->garantieEmprunt->numero_delib }}</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->type_financement)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->type_financement)
         <tr>
             <td>Délibération</td>
             <td><a href="#">Lien Fichier</a></td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->montant_plai_construction)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->montant_plai_construction)
         <tr>
             <td>Montant PLAI Const.</td>
             <td>{{ number_format($operation->garantieEmprunt->montant_plai_construction, 0, ',', ' ') }} €</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->montant_plai_foncier)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->montant_plai_foncier)
         <tr>
             <td>Montant PLAI Foncier</td>
             <td>{{ number_format($operation->garantieEmprunt->montant_plai_foncier, 0, ',', ' ') }} €</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->montant_pls_construction)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->montant_pls_construction)
         <tr>
             <td>Montant PLS Const.</td>
             <td>{{ number_format($operation->garantieEmprunt->montant_pls_construction, 0, ',', ' ') }} €</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->montant_pls_foncier)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->montant_pls_foncier)
         <tr>
             <td>Montant PLS Foncier</td>
             <td>{{ number_format($operation->garantieEmprunt->montant_pls_foncier, 0, ',', ' ') }} €</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->montant_plus_construction)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->montant_plus_construction)
         <tr>
             <td>Montant PLUS Construction</td>
             <td>{{ number_format($operation->garantieEmprunt->montant_plus_construction, 0, ',', ' ') }} €</td>
         </tr>
         @endif
-        @if ($operation->garantieEmprunt->montant_plus_foncier)
+        @if ($operation->garantieEmprunt && $operation->garantieEmprunt->montant_plus_foncier)
         <tr>
             <td>Montant PLUS Foncier</td>
             <td>{{ number_format($operation->garantieEmprunt->montant_plus_foncier, 0, ',', ' ') }} €</td>
@@ -299,38 +298,38 @@
         @endif
     </table>
 </div>
-    <div class="container mb-3">
-        <a href="{{ route('operations.edit', $operation->id) }}" class="btn btn-primary btn-sm">Modifier</a>
-        <form action="{{ route('operations.destroy', $operation->id) }}" metdod="POST" style="display:inline">
-            @csrf
-            {{-- @metdod('DELETE') --}}
-            <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
-        </form>
-    </div>
-    @endsection
+<div class="container mb-3">
+    <a href="{{ route('operations.edit', $operation->id) }}" class="btn btn-primary btn-sm">Modifier</a>
+    <form action="{{ route('operations.destroy', $operation->id) }}" metdod="POST" style="display:inline">
+        @csrf
+        {{-- @metdod('DELETE') --}}
+        <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+    </form>
+</div>
+@endsection
 
-    @push('scripts')
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const addressEl = document.getElementById("adresse");
-            const communeEl = document.getElementById("commune");
-            const osmLink = document.getElementById("osmLink");
+@push('scripts')
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const addressEl = document.getElementById("adresse");
+    const communeEl = document.getElementById("commune");
+    const osmLink = document.getElementById("osmLink");
 
-            // Si l'un des éléments manque, on stoppe
-            if (!addressEl || !communeEl || !osmLink) return;
+    // Si l'un des éléments manque, on stoppe
+    if (!addressEl || !communeEl || !osmLink) return;
 
-            // Récupère le texte brut et met à jour le lien
-            const adresse = addressEl.textContent.trim();
-            const commune = communeEl.textContent.trim();
+    // Récupère le texte brut et met à jour le lien
+    const adresse = addressEl.textContent.trim();
+    const commune = communeEl.textContent.trim();
 
-            if (!adresse) {
-                osmLink.href = "#";
-                osmLink.classList.add("disabled");
-            } else {
-                const query = encodeURIComponent(`${adresse} ${commune}`);
-                osmLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
-                osmLink.classList.remove("disabled");
-            }
-        });
-    </script>
-    @endpush
+    if (!adresse) {
+        osmLink.href = "#";
+        osmLink.classList.add("disabled");
+    } else {
+        const query = encodeURIComponent(`${adresse} ${commune}`);
+        osmLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
+        osmLink.classList.remove("disabled");
+    }
+});
+</script>
+@endpush

@@ -32,8 +32,12 @@ class GarantieEmpruntController extends Controller
             'numero_delib',
             'bureau_conseil',
             'date_bureau_conseil',
-            'deliberation' => 'nullable|file|mimes:pdf,doc,docx|max:2048', // Validation du fichier
-
+            'deliberation' => 'nullable|file|mimes:pdf,doc,docx|max:4096', // Validation du fichier
+            'date_deliberation_subvention',
+            'numero_delib_subvention',
+            'montant_subvention_agglo',
+            'date_cret',
+            'montant_cret',
         ]);
 
         if ($request->hasFile('deliberation')) {
@@ -68,6 +72,11 @@ class GarantieEmpruntController extends Controller
             'bureau_conseil',
             'date_bureau_conseil',
             'deliberation' => 'nullable|file|mimes:pdf,doc,docx|max:2048', // Validation du fichier
+            'date_deliberation_subvention',
+            'numero_delib_subvention',
+            'montant_subvention_agglo',
+            'date_cret',
+            'montant_cret',
         ]);
 
         if ($request->hasFile('deliberation')) {

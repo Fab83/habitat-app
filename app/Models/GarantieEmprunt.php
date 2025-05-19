@@ -28,6 +28,11 @@ class GarantieEmprunt extends Model
         'bureau_conseil',
         'date_bureau_conseil',
         'deliberation',
+        'date_deliberation_subvention',
+        'numero_delib_subvention',
+        'montant_subvention_agglo',
+        'date_cret',
+        'montant_cret',
     ];
 
     public function operation()
