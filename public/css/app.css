@@ -1,5 +1,5 @@
 * {
-    font-size:14px;
+    font-size: 14px;
 }
 .roundForm {
     padding: 1%;
@@ -42,8 +42,7 @@
     margin-left: 1rem;
 }
 
-
-.green-100{
-    background-color: #c9e2d7;
+.green-100 {
+    background-color: #e4f3ec;
     border: solid 1px #60746a;
 }

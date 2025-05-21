@@ -16,7 +16,7 @@
                 <th>Année prog.</th>
                 <th>Etat</th>
                 <th>Nom opération</th>
-                <th>Bailleur</th>
+                <th>Bailleur / Programme</th>
                 <th>Commune</th>
                 <th>Nombre LLS</th>
                 <th>Montant GE</th>
@@ -33,7 +33,7 @@
                         {{ $operation->nom_operation }}
                     </a>
                 </td>
-                <td>{{ $operation->bailleur->nom }}</td>
+                <td>{{ $operation->bailleur->nom }} - {{ $operation->programme->nom ?? '' }}</td>
                 <td>{{ $operation->commune_operation }}</td>
                 <td>{{ $operation->nombre_lls }}</td>
                 <td>{{ number_format($operation->garantieEmprunt->montant_total ?? 0, 0, ',', ' ') }} €</td>
