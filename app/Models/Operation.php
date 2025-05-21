@@ -15,7 +15,7 @@ class Operation extends Model
         'bailleur_id',
         'adresse_operation',
         'commune_operation',
-        'annulation',
+        'etat_avancement',
         'reference_cadastre',
         'vefa_mod',
         'neuf_aa',

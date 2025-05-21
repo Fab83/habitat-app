@@ -1,0 +1,32 @@
+Fausses pages : 
+- attribution, demandes, territoire
+
+Operations : 
+- lier à réservations
+- SRU non renseigné : changer
+- SIG non renseigné : changer
+- Neuf/AA inconnu inconnu : changer
+- VEFA/MOD idem
+- sur page index : lien délib GE
+- type financement : PLUS, PLAI, PLS, PSLA, BRS, ULS, UPLUS
+
+ContactECFR -> 
+- annuler renvoie sur liste bailleurs
+- page stats 
+- tel et adresse non required en édition
+- enlever code postal
+- type : maison, appartement, copropriété
+
+GE :
+- pb enregistrement fichier délibs
+- affichage durée des prêts
+- reprise design tableau saisie
+- Date mobilisation des fonds
+
+Accueil index :
+- boutons non responsive
+- ajout logo ecaa
+
+Renovation -> boutons menus (au moins liens vers conventions)
+- suivi PIG
+- suivi POPAC

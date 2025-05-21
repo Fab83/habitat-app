@@ -122,14 +122,24 @@
                             </div>
                             <div class="mb-3">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="annulation" id="annulation_oui"
-                                        value="oui">
-                                    <label class="form-check-label" for="annulation_oui">Annulée</label>
+                                    <input class="form-check-input" type="radio" name="etat_avancement" id="projet"
+                                        value="Projet" checked>
+                                    <label class="form-check-label" for="projet">Projet</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="annulation" id="annulation_non"
-                                        value="non" checked>
-                                    <label class="form-check-label" for="annulation_non">Non annulée</label>
+                                    <input class="form-check-input" type="radio" name="etat_avancement" id="encours"
+                                        value="En cours">
+                                    <label class="form-check-label" for="encours">En cours</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="etat_avancement" id="livree"
+                                        value="Livrée">
+                                    <label class="form-check-label" for="livree">Livrée</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="etat_avancement" id="annulee"
+                                        value="Annulée">
+                                    <label class="form-check-label" for="annulee">Annulée</label>
                                 </div>
                             </div>
                             <div class="row">

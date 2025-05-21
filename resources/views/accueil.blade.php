@@ -36,7 +36,8 @@
         <!-- Colonne 4 : Rénovation -->
         <div class="col-12 col-md-2 mb-5 d-flex flex-column align-items-center">
             <a href="{{ url('/contacts') }}" class="btn btn-danger w-100 mb-3">RENOVATION</a>
-            <a href="{{ url('#') }}" class="btn btn-outline-danger w-100 mb-3">Todo</a>
+            <a href="{{ url('#') }}" class="btn btn-outline-danger w-100 mb-3">PIG</a>
+            <a href="{{ url('#') }}" class="btn btn-outline-danger w-100 mb-3">POPAC</a>
         </div>
 
         <!-- Colonne 5 : Territoire -->

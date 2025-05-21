@@ -24,6 +24,7 @@ class ProgrammeController extends Controller
     {
         $validated = $request->validate([
             'nom' => 'required|string|max:255',
+            'commune' => 'required|string|max:255',
             'description' => 'nullable|string',
             'date_programme' => 'required|string',
             'bailleur_id' => 'required|exists:bailleurs,id',
@@ -50,6 +51,7 @@ class ProgrammeController extends Controller
     {
         $validated = $request->validate([
             'nom' => 'required|string|max:255',
+            'commune' => 'required|string|max:255',
             'description' => 'nullable|string',
             'date_programme' => 'required|string',
         ]);

@@ -23,5 +23,5 @@ ssh root@192.162.69.158
 MAJ
 cd ../var/www/habitat_app_main && git stash && git pull origin master && composer install --no-dev && php artisan migrate --force && php artisan cache:clear && php artisan config:clear
 
-SAUVE DB
+SAUVEGARDE DB
 ssh root@192.162.69.158 "mysqldump -u root -p'26282628/Bb' laravel" > laravel.sql

@@ -41,7 +41,7 @@ class OperationController extends Controller
             'nom_operation' => 'required|string|max:255',
             'adresse_operation' => 'required|string',
             'commune_operation' => 'required|string|max:255',
-            'annulation' => 'nullable|string|max:255',
+            'etat_avancement' => 'string|max:255',
             'reference_cadastre' => 'nullable|string|max:255',
             'vefa_mod' => 'string|max:100',
             'neuf_aa' => 'string|max:100',
@@ -135,7 +135,7 @@ class OperationController extends Controller
         $validated = $request->validate([
             'programme_id' => 'required|exists:programmes,id',
             'nom_operation' => 'required|string|max:255',
-            'annulation' => 'nullable|string|max:255',
+            'etat_avancement' => 'nullable|string|max:255',
             'adresse_operation' => 'required|string',
             'commune_operation' => 'required|string|max:255',
             'reference_cadastre' => 'nullable|string|max:255',

@@ -14,7 +14,7 @@
         <thead>
             <tr>
                 <th>Année prog.</th>
-                <th>Annulée</th>
+                <th>Etat</th>
                 <th>Nom opération</th>
                 <th>Bailleur</th>
                 <th>Commune</th>
@@ -25,9 +25,9 @@
         </thead>
         <tbody>
             @foreach ($operations as $operation)
-            <tr class="{{ trim(strtolower($operation->annulation)) === 'oui' ? 'table-secondary fst-italic' : '' }}">
+            <tr class="{{ ($operation->etat_avancement) === 'Annulée' ? 'table-secondary fst-italic' : '' }}">
                 <td>{{ $operation->annee_prog }}</td>
-                <td>{{ $operation->annulation }}</td>
+                <td>{{ $operation->etat_avancement }}</td>
                 <td>
                     <a href="{{ route('operations.show', $operation->id) }}" class="text-decoration-underline">
                         {{ $operation->nom_operation }}

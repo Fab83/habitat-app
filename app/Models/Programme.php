@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Programme extends Model
 {
-    protected $fillable = ['nom', 'description', 'bailleur_id', 'date_programme'];
+    protected $fillable = ['nom', 'commune', 'description', 'bailleur_id', 'date_programme'];
     
     public function operations()
     {
