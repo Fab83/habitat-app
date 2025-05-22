@@ -189,7 +189,7 @@
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="vefa_mod"
-                                            id="inconnu" value="VEFA/MOD inconnu" checked>
+                                            id="inconnu" value="Inconnu" checked>
                                         <label class="form-check-label" for="inconnu">Inconnu</label>
                                     </div>
                                 </div>
@@ -208,7 +208,7 @@
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="neuf_aa" id="inconnu"
-                                            value="neuf-aa inconnu inconnu" checked>
+                                            value="Inconnu" checked>
                                         <label class="form-check-label" for="inconnu">Inconnu</label>
                                     </div>
                                 </div>

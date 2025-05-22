@@ -6,65 +6,67 @@
     }
 </style>
 @section('content')
-<div class="container-fluid my-5">
+<div class="container my-5">
     <h1 class="display-6">Opération : {{ $operation->nom_operation }}</h1>
     <p class="fs-6 fst-italic">N'apparaissent que les données non vides</p>
     <table class="table">
         <tr>
-            <td>Année programmation</td>
+            <th>Année programmation</th>
             <td>{{ $operation->annee_prog }}</td>
-
-            <td>Bailleur</td>
+            <th>Etat d'avancement</th>
+            <td>{{ $operation->etat_avancement }}</td>
+        </tr>
+        <tr>
+            <th>Bailleur</th>
             <td>{{ $operation->bailleur->nom }}</td>
         </tr>
         <tr>
-            <td>Adresse</td>
+            <th>Adresse</th>
             <td id="adresse" colspan="3">{{ $operation->adresse_operation }}
                 <a href="#" id="osmLink" target="_blank" class="disabled osmLinked">Carte</a>
             </td>
-
         </tr>
         <tr>
-            <td>Commune</td>
+            <th>Commune</th>
             <td id="commune">{{ $operation->commune_operation }}</td>
+        </tr>
 
+        @if ($operation->reference_cadastre)
 
-            @if ($operation->reference_cadastre)
-
-            <td>Cadastre</td>
-            <td>{{ $operation->reference_cadastre }}</td>
-            @endif @if ($operation->vefa_mod)
+        <th>Cadastre</th>
+        <td>{{ $operation->reference_cadastre }}</td>
+        @endif @if ($operation->vefa_mod)
         <tr>
-            <td>VEFA/MOD</td>
+            <th>VEFA/MOD</th>
             <td>{{ $operation->vefa_mod }}</td>
 
             @endif
             @if ($operation->neuf_aa)
-            <td>Neuf / AA</td>
+            <th>Neuf / AA</th>
             <td>{{ $operation->neuf_aa }}</td>
         </tr>
         @endif
         @if ($operation->promoteur)
         <tr>
-            <td>Promoteur</td>
+            <th>Promoteur</th>
             <td>{{ $operation->promoteur }}</td>
         </tr>
         @endif
         @if ($operation->numero_pc)
         <tr>
-            <td>Numéro PC</td>
+            <th>Numéro PC</th>
             <td>{{ $operation->numero_pc }}</td>
         </tr>
         @endif
         @if ($operation->date_pc)
         <tr>
-            <td>Date PC</td>
+            <th>Date PC</th>
             <td>{{ $operation->date_pc }}</td>
         </tr>
         @endif
         @if ($operation->pc)
         <tr>
-            <td>PC</td>
+            <th>PC</th>
             <td>{{ $operation->pc }}</td>
         </tr>
         @endif
@@ -77,61 +79,61 @@
 
         <tr>
             @if ($operation->nombre_logements)
-            <td>Nombre logements</td>
+            <th>Nombre logements</th>
             <td>{{ $operation->nombre_logements }}</td>
 
             @endif
 
             @if ($operation->nombre_lls)
-            <td>Nombre LLS</td>
+            <th>Nombre LLS</th>
             <td>{{ $operation->nombre_lls }}</td>
         </tr>
         @endif
         @if ($operation->nombre_plai_agrement)
         <tr>
-            <td>Nombre PLAI Agrément</td>
+            <th>Nombre PLAI Agrément</th>
             <td>{{ $operation->nombre_plai_agrement }}</td>
         </tr>
         @endif
         @if ($operation->nombre_plai)
         <tr>
-            <td>Nombre PLAI</td>
+            <th>Nombre PLAI</th>
             <td>{{ $operation->nombre_plai }}</td>
         </tr>
         @endif
         @if ($operation->nombre_plus_agrement)
         <tr>
-            <td>Nombre PLUS Agrément</td>
+            <th>Nombre PLUS Agrément</th>
             <td>{{ $operation->nombre_plus_agrement }}</td>
         </tr>
         @endif
         @if ($operation->nombre_plus)
-        <td>Nombre PLUS</td>
+        <th>Nombre PLUS</tthd>
         <td>{{ $operation->nombre_plus }}</td>
         <tr>
             @endif
             @if ($operation->nombre_pls_agrement)
         <tr>
-            <td>Nombre PLS Agrément</td>
+            <th>Nombre PLS Agrément</th>
             <td>{{ $operation->nombre_pls_agrement }}</td>
         </tr>
         @endif
         @if ($operation->nombre_pls)
-        <td>Nombre PLS</td>
+        <th>Nombre PLS</th>
         <td>{{ $operation->nombre_pls }}</td>
         </tr>
         @endif
 
         @if ($operation->nombre_ulsplus)
         <tr>
-            <td>Nombre ULS+</td>
+            <th>Nombre ULS+</th>
             <td>{{ $operation->nombre_ulsplus }}</td>
         </tr>
         @endif
 
         @if ($operation->nombre_ulspls)
         <tr>
-            <td>Nombre ULS-</td>
+            <th>Nombre ULS-</th>
             <td>{{ $operation->nombre_ulspls }}</td>
         </tr>
         @endif
@@ -142,13 +144,13 @@
         </tr>
         @if ($operation->nombre_lli)
         <tr>
-            <td>Nombre LLI</td>
+            <th>Nombre LLI</th>
             <td>{{ $operation->nombre_lli }}</td>
         </tr>
         @endif
         @if ($operation->nombre_ulli)
         <tr>
-            <td>Nombre ULLI</td>
+            <th>Nombre ULLI</th>
             <td>{{ $operation->nombre_ulli }}</td>
         </tr>
         @endif
@@ -159,19 +161,19 @@
         </tr>
         @if ($operation->nombre_psla_agrement)
         <tr>
-            <td>Nombre PSLA Agrément</td>
+            <th>Nombre PSLA Agrément</th>
             <td>{{ $operation->nombre_psla_agrement }}</td>
         </tr>
         @endif
         @if ($operation->nombre_psla)
         <tr>
-            <td>Nombre PSLA</td>
+            <th>Nombre PSLA</th>
             <td>{{ $operation->nombre_psla }}</td>
         </tr>
         @endif
         @if ($operation->nombre_brs)
         <tr>
-            <td>Nombre BRS Agrément</td>
+            <th>Nombre BRS Agrément</th>
             <td>{{ $operation->nombre_brs }}</td>
         </tr>
         @endif
@@ -180,19 +182,19 @@
         </td>
         @if($operation->date_livraison)
         <tr>
-            <td>Date livraison</td>
+            <th>Date livraison</th>
             <td>{{ $operation->date_livraison }}</td>
         </tr>
         @endif
         @if($operation->nombre_logements_livres)
         <tr>
-            <td>Nombre logements livrés</td>
+            <th>Nombre logements livrés</th>
             <td>{{ $operation->nombre_logements_livres }}</td>
         </tr>
         @endif
         @if($operation->rt)
         <tr>
-            <td>RT</td>
+            <th>RT</th>
             <td>{{ $operation->RT }}</td>
         </tr>
         @endif
@@ -203,19 +205,19 @@
         </tr>
         @if($operation->inventaire_sru)
         <tr>
-            <td>Inventaire SRU</td>
+            <th>Inventaire SRU</th>
             <td>{{ $operation->inventaire_sru }}</td>
         </tr>
         @endif
         @if($operation->sig)
         <tr>
-            <td>SIG</td>
+            <th>SIG</th>
             <td>{{ $operation->sig }}</td>
         </tr>
         @endif
         @if($operation->commentaires)
         <tr>
-            <td>Commentaires</td>
+            <th>Commentaires</th>
             <td>{{ $operation->commentaires }}</td>
         </tr>
         @endif
@@ -226,7 +228,7 @@
         </tr>
         @if ($operation->garantieEmprunt && $operation->garantieEmprunt->montant_total)
         <tr>
-            <td>Montant GE</td>
+            <th>Montant GE</th>
             <td>{{ number_format($operation->garantieEmprunt->montant_total, 0, ',', ' ') }} €</td>
         </tr>
         @endif

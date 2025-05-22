@@ -160,13 +160,13 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="etat_avancement" id="projet"
                                         value="Projet"
-                                        {{ old('etat_avancement', $operation->etat_avancement ?? '') == 'projet' ? 'checked' : '' }}>
+                                        {{ old('etat_avancement', $operation->etat_avancement ?? '') == 'Projet' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="projet">Projet</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="etat_avancement"
                                         id="encours" value="En cours"
-                                        {{ old('etat_avancement', $operation->etat_avancement ?? '') == 'en cours' ? 'checked' : '' }}>
+                                        {{ old('etat_avancement', $operation->etat_avancement ?? '') == 'En cours' ? 'checked' : '' }}>
                                     <label class="form-check-label" for="encours">En cours</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -215,8 +215,8 @@
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="vefa_mod"
-                                            id="inconnu" value="VEFA/MOD inconnu"
-                                            {{ old('vefa_mod', $operation->vefa_mod) == 'VEFA/MOD inconnu' ? 'checked' : '' }}>
+                                            id="inconnu" value="Inconnu"
+                                            {{ old('vefa_mod', $operation->vefa_mod) == 'Inconnu' ? 'checked' : '' }}>
                                         <label class="form-check-label" for="inconnu">Inconnu</label>
                                     </div>
                                 </div>
@@ -237,8 +237,8 @@
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="neuf_aa" id="inconnu"
-                                            value="neuf-aa inconnu inconnu"
-                                            {{ old('neuf_aa', $operation->neuf_aa) == 'neuf-aa inconnu inconnu' ? 'checked' : '' }}>
+                                            value="Inconnu"
+                                            {{ old('neuf_aa', $operation->neuf_aa) == 'Inconnu' ? 'checked' : '' }}>
                                         <label class="form-check-label" for="inconnu">Inconnu</label>
                                     </div>
                                 </div>
@@ -469,7 +469,7 @@
                     </div>
 
                     {{-- Onglet Subventions --}}
-                    <div class="tab-pane fade bg-success-subtle" id="subvention" role="tabpanel">
+                    <div class="tab-pane fade" id="subvention" role="tabpanel">
                         <div class="container roundForm green-100">
                             <h1 class="display-6">Subventions</h1>
                             <div class="row g-2">
@@ -510,7 +510,7 @@
                     </div>
 
                     {{-- Onglet Garanties --}}
-                    <div class="tab-pane fade bg-success-subtle" id="garantie" role="tabpanel">
+                    <div class="tab-pane fade" id="garantie" role="tabpanel">
                         <div class="container roundForm green-100">
                             <h1 class="display-6">Garanties Emprunt</h1>
                             <div class="row g-2">
