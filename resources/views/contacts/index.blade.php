@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid my-5">
     <h1 class="my-3">Contacts ECFR</h1>
 
     <a href="{{ route('contacts.create') }}" class="btn btn-info btn-sm mb-3">Ajouter un contact</a>
@@ -50,16 +50,16 @@
 
 @push('scripts')
 <script>
-$(document).ready(function() {
-    $('#contactsTable').DataTable({
-        language: {
-            url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" // Traduction en français
-        },
-        order: [
-            [0, 'asc']
-        ], // Tri par défaut sur la première colonne (Nom)
-        pageLength: 10, // Nombre d'éléments par page
+    $(document).ready(function() {
+        $('#contactsTable').DataTable({
+            language: {
+                url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json" // Traduction en français
+            },
+            order: [
+                [0, 'asc']
+            ], // Tri par défaut sur la première colonne (Nom)
+            pageLength: 10, // Nombre d'éléments par page
+        });
     });
-});
 </script>
 @endpush

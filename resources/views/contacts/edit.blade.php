@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Modifier un Contact')
 @section('content')
-<div class="container">
+<div class="container-fluid mx-5">
     <h1 class="mb-4">Modifier le Contact</h1>
 
     {{-- Affichage des erreurs de validation --}}

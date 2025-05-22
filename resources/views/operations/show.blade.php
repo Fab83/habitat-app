@@ -1,12 +1,12 @@
 @extends('layouts.app')
 <style>
-body {
-    line-height: 1;
-    ;
-}
+    body {
+        line-height: 1;
+        ;
+    }
 </style>
 @section('content')
-<div class="container">
+<div class="container-fluid my-5">
     <h1 class="display-6">Opération : {{ $operation->nom_operation }}</h1>
     <p class="fs-6 fst-italic">N'apparaissent que les données non vides</p>
     <table class="table">
@@ -310,26 +310,26 @@ body {
 
 @push('scripts')
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const addressEl = document.getElementById("adresse");
-    const communeEl = document.getElementById("commune");
-    const osmLink = document.getElementById("osmLink");
+    document.addEventListener("DOMContentLoaded", function() {
+        const addressEl = document.getElementById("adresse");
+        const communeEl = document.getElementById("commune");
+        const osmLink = document.getElementById("osmLink");
 
-    // Si l'un des éléments manque, on stoppe
-    if (!addressEl || !communeEl || !osmLink) return;
+        // Si l'un des éléments manque, on stoppe
+        if (!addressEl || !communeEl || !osmLink) return;
 
-    // Récupère le texte brut et met à jour le lien
-    const adresse = addressEl.textContent.trim();
-    const commune = communeEl.textContent.trim();
+        // Récupère le texte brut et met à jour le lien
+        const adresse = addressEl.textContent.trim();
+        const commune = communeEl.textContent.trim();
 
-    if (!adresse) {
-        osmLink.href = "#";
-        osmLink.classList.add("disabled");
-    } else {
-        const query = encodeURIComponent(`${adresse} ${commune}`);
-        osmLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
-        osmLink.classList.remove("disabled");
-    }
-});
+        if (!adresse) {
+            osmLink.href = "#";
+            osmLink.classList.add("disabled");
+        } else {
+            const query = encodeURIComponent(`${adresse} ${commune}`);
+            osmLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
+            osmLink.classList.remove("disabled");
+        }
+    });
 </script>
 @endpush

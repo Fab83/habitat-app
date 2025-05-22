@@ -24,7 +24,8 @@
         </div>
     </nav>
 
-    <div class="container flex-grow-1">
+    <div>
+        <!-- <div class="container flex-grow-1"> -->
         @yield('content')
     </div>
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid my-5">
     <h1>Liste des opérations</h1>
 
     <a href="{{ route('operations.create') }}" class="btn btn-info btn-sm m-3">Ajouter une opération</a>
@@ -62,12 +62,12 @@
 @endsection
 @push('scripts')
 <script>
-$(document).ready(function() {
-    $('#operationsTable').DataTable({
-        language: {
-            url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json'
-        }
+    $(document).ready(function() {
+        $('#operationsTable').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/fr-FR.json'
+            }
+        });
     });
-});
 </script>
 @endpush

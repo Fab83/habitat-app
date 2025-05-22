@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid my-5">
     <div class="d-flex align-items-center mb-3">
         <h1 class="my-5">Liste des Programmes immobiliers avec LLS</h1>
         <a href="{{ route('programmes.create') }}" class="btn btn-success btn-sm ms-auto">Ajout</a>

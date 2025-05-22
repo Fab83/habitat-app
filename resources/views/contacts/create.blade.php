@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid mx-5">
     <h1 class="mb-3">Ajouter un Contact Réno</h1>
 
     @if ($errors->any())

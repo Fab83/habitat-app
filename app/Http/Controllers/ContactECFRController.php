@@ -96,7 +96,7 @@ class ContactECFRController extends Controller
             'date_contact' => 'required|date',
             'email_contact' => 'required|email|max:255',
             'telephone_contact' => 'required|string|max:20',
-            'adresse_contact' => 'required|string|max:255',
+            'adresse_contact' => 'nullable|string|max:255',
             'commune_contact' => 'required|string|max:255',
             'revenu_fiscal' => 'nullable|numeric',
             'taille_menage' => 'nullable|integer',

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container my-5">
     <h1>Détails du Contact</h1>
 
     <table class="table table-bordered">
@@ -112,7 +112,6 @@
             @endif
         </tbody>
     </table>
-
     <a href="{{ route('contacts.index') }}" class="btn btn-secondary">Retour à la liste</a>
 </div>
 @endsection

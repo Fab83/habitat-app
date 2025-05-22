@@ -2,7 +2,7 @@
 @section('title', 'Accueil')
 
 @section('content')
-<div class="container d-flex-column justify-content-center align-items-center" style="height: 100vh;">
+<div class="container-fluid d-flex-column justify-content-center align-items-center" style="height: 100vh;">
     <div class="row">
         <h1 class="display-5 my-5 text-center">HABITAT ECAA</h1>
     </div>
