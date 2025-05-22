@@ -24,6 +24,9 @@
             <a href="{{ url('/bailleurs') }}" class="btn btn-secondary w-100 mb-3">
                 BAILLEURS
             </a>
+            <a href="{{ url('/#') }}" class="btn btn-outline-secondary w-100 mb-3">
+                Parc privé ?
+            </a>
         </div>
 
         <!-- Colonne 3 : Logements -->

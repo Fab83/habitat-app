@@ -1,6 +1,8 @@
 Fausses pages : 
 - attribution, demandes, territoire
 
+Authentification breeze sans tailwind
+
 Operations : 
 - lier à réservations
 - SRU non renseigné : changer
@@ -9,6 +11,7 @@ Operations :
 - VEFA/MOD idem
 - sur page index : lien délib GE
 - type financement : PLUS, PLAI, PLS, PSLA, BRS, ULS, UPLUS
+- Numéro opération (agrément)
 
 ContactECFR -> 
 - annuler renvoie sur liste bailleurs
