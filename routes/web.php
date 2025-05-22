@@ -19,6 +19,7 @@ Route::resource('bailleurs', BailleurController::class);
 Route::resource('operations', OperationController::class);
 Route::resource('garantie-emprunts', GarantieEmpruntController::class);
 Route::resource('programmes', ProgrammeController::class);
+Route::get('contacts/statistiques', [ContactECFRController::class, 'statistiques'])->name('contacts.statistiques');
 Route::resource('contacts', ContactECFRController::class)->parameters([
     'contacts' => 'contactECFR'
 ]);

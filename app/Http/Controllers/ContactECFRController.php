@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\ContactECFR;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ContactECFRController extends Controller
@@ -135,5 +137,30 @@ class ContactECFRController extends Controller
     {
         $contactECFR->delete();
         return redirect()->route('contacts.index')->with('success', 'Contact supprimé avec succès.');
+    }
+
+    public function statistiques()
+    {
+        $stats = ContactECFR::query()
+            ->select(
+                'commune_contact',
+                DB::raw('YEAR(date_contact) as annee'),
+                DB::raw('MONTH(date_contact) as mois'),
+                DB::raw('COUNT(*) as total')
+            )
+            ->groupBy('commune_contact', 'annee', 'mois')
+            ->orderBy('commune_contact')
+            ->orderBy('annee')
+            ->orderBy('mois')
+            ->get()
+            ->transform(function ($row) {
+                // libellé français du mois
+                $row->mois_libelle = Carbon::create(null, $row->mois)
+                    ->locale('fr')
+                    ->monthName;
+                return $row;
+            });
+
+        return view('contacts.statistiques', compact('stats'));
     }
 }

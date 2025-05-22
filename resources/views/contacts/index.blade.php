@@ -5,6 +5,8 @@
     <h1 class="my-3">Contacts ECFR</h1>
 
     <a href="{{ route('contacts.create') }}" class="btn btn-info btn-sm mb-3">Ajouter un contact</a>
+    <a href="{{ route('contacts.statistiques') }}" class="btn btn-secondary btn-sm mb-3">Statistiques</a>
+
 
     @if (session('success'))
     <div class="alert alert-success">{{ session('success') }}</div>
